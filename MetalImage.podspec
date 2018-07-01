@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MetalImage'
-  s.version          = '0.0.1'
+  s.version          = '0.0.3'
   s.summary          = 'MetalImage use to camera.'
   s.homepage         = 'https://github.com/zhangsirong/MetalImage'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
