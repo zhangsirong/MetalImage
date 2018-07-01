@@ -1,0 +1,1 @@
+../../../../../MetalImage/Classes/Filters/Base/MI3x3TextureSamplingFilter.h

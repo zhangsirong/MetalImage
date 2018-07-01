@@ -38,16 +38,26 @@ static MIContext *_sharedContext = nil;
         _device = MTLCreateSystemDefaultDevice();
         _defaultLibrary = [_device newDefaultLibrary];
         
-        NSBundle *bundle = [NSBundle bundleForClass:self.class];
-        NSError *libraryError = NULL;
-        NSString *libraryFile = [bundle pathForResource:@"default" ofType:@"metallib"];
+        NSURL *metalImageURL = [[NSBundle mainBundle] URLForResource:@"MetalImage" withExtension:@"bundle"];
         
-        if (libraryFile) {
+        NSString *libraryFile;
+        if (metalImageURL) {
+            NSBundle *metalImageBundle = [NSBundle bundleWithURL:metalImageURL];
+            libraryFile = [metalImageBundle pathForResource:@"MetalImage" ofType:@"metallib"];
+        }
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:libraryFile]) {
+            libraryFile = [[NSBundle bundleForClass:self.class] pathForResource:@"default" ofType:@"metallib"];
+        }
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:libraryFile]) {
+            NSError *libraryError;
             _metalImageLibrary = [_device newLibraryWithFile:libraryFile error:&libraryError];
             if (!_metalImageLibrary) {
                 NSLog(@"Library error: %@", libraryError);
             }
         } else {
+            NSLog(@"MetalImage use defaultLibrary");
             _metalImageLibrary = _defaultLibrary;
         }
         _commandQueue = [_device newCommandQueue];

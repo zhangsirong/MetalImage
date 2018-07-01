@@ -1,0 +1,1 @@
+../../../../../MetalImage/Classes/Consumers/MIGifWriter.h

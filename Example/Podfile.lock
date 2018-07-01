@@ -1,5 +1,5 @@
 PODS:
-  - MetalImage (0.0.1)
+  - MetalImage (0.0.4)
 
 DEPENDENCIES:
   - MetalImage (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MetalImage: 01f96b21759866e22a93836c88765066848aceff
+  MetalImage: 0a017c2fcacfeca6b49d6b0fb6b3e4fe93369244
 
-PODFILE CHECKSUM: 611a4f0d8f7d5f196d193e522829e6aa8a6e6716
+PODFILE CHECKSUM: c0faec26e6c11a7f3f388a7d622a8fe2ea805992
 
 COCOAPODS: 1.5.3

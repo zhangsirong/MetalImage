@@ -1,6 +1,6 @@
 {
   "name": "MetalImage",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "summary": "MetalImage use to camera.",
   "homepage": "https://github.com/zhangsirong/MetalImage",
   "license": {
@@ -12,12 +12,17 @@
   },
   "source": {
     "git": "https://github.com/zhangsirong/MetalImage.git",
-    "tag": "0.0.1"
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "MetalImage/Classes/**/*",
+  "resource_bundles": {
+    "MetalImage": [
+      "MetalImage/Assets/*.metallib"
+    ]
+  },
   "frameworks": [
     "Metal",
     "MetalKit",

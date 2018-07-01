@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MetalImage'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'MetalImage use to camera.'
   s.homepage         = 'https://github.com/zhangsirong/MetalImage'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MetalImage/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MetalImage' => ['MetalImage/Assets/*.png']
-  # }
+  s.resource_bundles = {
+      'MetalImage' => ['MetalImage/Assets/*.metallib']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Metal', 'MetalKit', 'UIKit', 'MobileCoreServices', 'ImageIO', 'CoreMotion', 'Foundation', 'CoreGraphics', 'AVFoundation', 'QuartzCore', 'CoreFoundation', 'CoreMedia'
