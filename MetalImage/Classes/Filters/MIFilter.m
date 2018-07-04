@@ -76,7 +76,7 @@
 
     [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
     [commandEncoder endEncoding];
-//
+
     [self produceAtTime:time commandBuffer:commandBuffer];
 }
 

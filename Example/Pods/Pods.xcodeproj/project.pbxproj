@@ -178,7 +178,7 @@
 /* Begin PBXFileReference section */
 		00829099F7563B75854054E250999739 /* MIUIElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIUIElement.m; sourceTree = "<group>"; };
 		008A37BF26B83E111F04D97920CC47A8 /* MITwoInputFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MITwoInputFilter.h; sourceTree = "<group>"; };
-		00FCBF3E3675890B1999DB119564027F /* MetalImage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MetalImage.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		00FCBF3E3675890B1999DB119564027F /* MetalImage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MetalImage.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		03073044BA565E3CBA7B7C3D9D682983 /* MIEmbossFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIEmbossFilter.m; sourceTree = "<group>"; };
 		05F10E3E8CCA02C0E4847D4BC1A36F9B /* MIMonochromeFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIMonochromeFilter.m; sourceTree = "<group>"; };
 		072FAF5D5D0499D87022FB2E9BC217B1 /* MILuminanceThresholdFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MILuminanceThresholdFilter.h; sourceTree = "<group>"; };
@@ -205,14 +205,14 @@
 		29F0FD527612EAFC2CA27B069C24487C /* MITwoPassTextureSamplingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MITwoPassTextureSamplingFilter.m; sourceTree = "<group>"; };
 		2D90E2774C9803E1795FA102C089D347 /* MIAudioVideoWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIAudioVideoWriter.m; sourceTree = "<group>"; };
 		2EC8B7B702DD85E3A5E98C5318F2E865 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
-		30FFC93A775513F786BF8038E0229A7E /* libMetalImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMetalImage.a; path = libMetalImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		30FFC93A775513F786BF8038E0229A7E /* libMetalImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMetalImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BBC27ADA871F5726A2289B80D681E8 /* MIFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIFilter.m; sourceTree = "<group>"; };
 		376EBAE8FD2DE568FE73D2EFE05DBDE0 /* MIPerlinNoiseFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIPerlinNoiseFilter.h; sourceTree = "<group>"; };
 		37A07E55DFCCF3372959E48E13CB5364 /* MI3x3ConvolutionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MI3x3ConvolutionFilter.m; sourceTree = "<group>"; };
 		385B77BFAD1E91182CDF0DA73C824ED5 /* MISaturationFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MISaturationFilter.h; sourceTree = "<group>"; };
 		38D7504E6D3BCA3A85BA7F1E004BD530 /* MIPixellatePositionFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIPixellatePositionFilter.h; sourceTree = "<group>"; };
 		3CFCF14BF5796F53D665AE0F4E9DA708 /* MICrosshatchFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MICrosshatchFilter.h; sourceTree = "<group>"; };
-		3D8F6D7C29041832B2470263AFC2C4E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3D8F6D7C29041832B2470263AFC2C4E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3DAEBE63B80D253D7715DA721E5D0DDD /* MetalImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MetalImage.h; path = MetalImage/Classes/MetalImage.h; sourceTree = "<group>"; };
 		3E673945655AD73CBBD5E69AEB391227 /* MIMirrorFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIMirrorFilter.m; sourceTree = "<group>"; };
 		3EF2E67A1484EA3B2841589DF32BCB4A /* MIPosterizeFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIPosterizeFilter.m; sourceTree = "<group>"; };
@@ -226,14 +226,14 @@
 		481A64137D8576FAFC44E1A337F8B654 /* MISolarizeFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MISolarizeFilter.m; sourceTree = "<group>"; };
 		4867A74B574D60F0040CD4B83B498192 /* MIKuwaharaFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIKuwaharaFilter.m; sourceTree = "<group>"; };
 		4BEF8CF17F33754BAA3AAABE16EADFE6 /* MIPolkaDotFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIPolkaDotFilter.h; sourceTree = "<group>"; };
-		4BF582456C595897DEC63F3FE9244348 /* MetalImage.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MetalImage.bundle; path = "MetalImage-MetalImage.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BF582456C595897DEC63F3FE9244348 /* MetalImage.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalImage.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3818926B6C562DEFE1E84FA50ED648 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		4F821544997226A1725D946747586206 /* MISwirlFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MISwirlFilter.h; sourceTree = "<group>"; };
 		4FDAD4A5368160801ED2D9F619D74505 /* MIBoxBlurFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIBoxBlurFilter.h; sourceTree = "<group>"; };
 		50BA4E88F56A71EEBDB37AC7E11DA3E2 /* MI3x3TextureSamplingFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MI3x3TextureSamplingFilter.m; sourceTree = "<group>"; };
 		511AD6AA944E1CCB506012B374F76B8D /* MIMirrorFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIMirrorFilter.h; sourceTree = "<group>"; };
 		51235F06F1FAC6ED6A9F43D805435386 /* MIPolkaDotFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIPolkaDotFilter.m; sourceTree = "<group>"; };
-		51977669AA7977381DF566D60B3FAE96 /* MetalImage.metallib */ = {isa = PBXFileReference; includeInIndex = 1; name = MetalImage.metallib; path = MetalImage/Assets/MetalImage.metallib; sourceTree = "<group>"; };
+		51977669AA7977381DF566D60B3FAE96 /* MetalImage.metallib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "archive.metal-library"; name = MetalImage.metallib; path = MetalImage/Assets/MetalImage.metallib; sourceTree = "<group>"; };
 		53B83B043E9E6F8E20C983E23E8EDDB4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		53B84761D49785D9D92D6FD622FCA5B1 /* MISketchFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MISketchFilter.m; sourceTree = "<group>"; };
 		54013656DAEC6F4DEA30DAE6E12BB439 /* Pods-MetalImage_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MetalImage_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		723CC141DB6BC743B6470CB195C238B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		72AD8F7A9356C0BF0F8F6A2912B53E97 /* MIMonochromeFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIMonochromeFilter.h; sourceTree = "<group>"; };
 		78250151E4AFDBAEC0AC2594D10EAF54 /* MIGaussianBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIGaussianBlurFilter.m; sourceTree = "<group>"; };
-		78AA1120DF897BF723CD65708C2BD361 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		78AA1120DF897BF723CD65708C2BD361 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		79CB2C596C3EF08CE5D7A382030A67D9 /* MIGlassSphereFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIGlassSphereFilter.m; sourceTree = "<group>"; };
 		7F40BF4EDBA8959F4BB171044510BE13 /* MIGaussianBlurFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIGaussianBlurFilter.h; sourceTree = "<group>"; };
 		819B132FA01A6500A132577B94660B0C /* MIPixellatePositionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIPixellatePositionFilter.m; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		91971E4F27E0A0A9C807A8937C536E88 /* MIVideoCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIVideoCamera.m; sourceTree = "<group>"; };
 		925971A1D0643DDE8488F0797B06DA51 /* MIFalseColorFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIFalseColorFilter.h; sourceTree = "<group>"; };
 		925AC53DCD78D411102C1AB319B4EB57 /* MIVideoCaptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIVideoCaptor.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		948DC4CB4D6D41C66B442EC55A756FAF /* MIGifWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIGifWriter.m; sourceTree = "<group>"; };
 		94B5EF7174CF7C6D9931968F859E00A4 /* MIVideoCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MIVideoCamera.h; sourceTree = "<group>"; };
 		950CC8607F014D7029901F2362ED4816 /* MIView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIView.m; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 		C34C6C0B9FB32FD6AEC443B527DE34A6 /* MIToonFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIToonFilter.m; sourceTree = "<group>"; };
 		C558E831E4F450B277043840995E22C6 /* MILookupTableFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MILookupTableFilter.h; sourceTree = "<group>"; };
 		C58122D9ADD767E3DCB3870BF50DDB33 /* MIThresholdEdgeDetectionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIThresholdEdgeDetectionFilter.m; sourceTree = "<group>"; };
-		C63E05A975FE72FC0012E77EE305DB2F /* libPods-MetalImage_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MetalImage_Example.a"; path = "libPods-MetalImage_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63E05A975FE72FC0012E77EE305DB2F /* libPods-MetalImage_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MetalImage_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FB42240114CC770728FC046F555AEA /* MIGrayscaleFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MIGrayscaleFilter.m; sourceTree = "<group>"; };
 		C86F18BB180CD7D959F09C1D9DAF682F /* MISobelEdgeDetectionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MISobelEdgeDetectionFilter.m; sourceTree = "<group>"; };
 		CB64D9A51B35712D90527DA489387F8E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -448,7 +448,6 @@
 				B5FF06919BF76ECE68697836C9CCA91C /* MISolarizeFilter.h */,
 				481A64137D8576FAFC44E1A337F8B654 /* MISolarizeFilter.m */,
 			);
-			name = ColorProcessing;
 			path = ColorProcessing;
 			sourceTree = "<group>";
 		};
@@ -527,7 +526,6 @@
 				9B7560CF5E502BC2FA30450383CAA45D /* MIThresholdEdgeDetectionFilter.h */,
 				C58122D9ADD767E3DCB3870BF50DDB33 /* MIThresholdEdgeDetectionFilter.m */,
 			);
-			name = imageProcessing;
 			path = imageProcessing;
 			sourceTree = "<group>";
 		};
@@ -595,7 +593,6 @@
 				C1441DF91A53433AE2911DFE59398839 /* MITwoPassTextureSamplingFilter.h */,
 				29F0FD527612EAFC2CA27B069C24487C /* MITwoPassTextureSamplingFilter.m */,
 			);
-			name = Base;
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -702,7 +699,6 @@
 				5FAD4E264B038BD3F663E15AA6120ECA /* MIVignetteFilter.h */,
 				6266CA50773FD845F209E008AA1D4EDB /* MIVignetteFilter.m */,
 			);
-			name = Effects;
 			path = Effects;
 			sourceTree = "<group>";
 		};
@@ -1009,7 +1005,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1194,7 +1190,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

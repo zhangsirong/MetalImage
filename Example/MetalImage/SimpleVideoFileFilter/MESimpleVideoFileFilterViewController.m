@@ -42,7 +42,13 @@
     _processFilter = [[MIPixellationFilter alloc] init];
     _viewFilter = [[MIFilter alloc] init];
     
-    _viewFilter.outputFrame = CGRectMake(0, 360, 640, 360);
+    CGRect outputFrame = CGRectZero;
+    outputFrame.size.width = _displayView.contentSize.width;
+    outputFrame.size.height = outputFrame.size.width * _sourceVideo.size.height / _sourceVideo.size.width;
+    outputFrame.origin.x = 0;
+    outputFrame.origin.y = (_displayView.contentSize.height - outputFrame.size.height) * 0.5;
+
+    _viewFilter.outputFrame = outputFrame;
     
     NSString *processFilePath = [NSTemporaryDirectory() stringByAppendingString:@"test.mp4"];
     if ([[NSFileManager defaultManager] fileExistsAtPath:processFilePath]) {
