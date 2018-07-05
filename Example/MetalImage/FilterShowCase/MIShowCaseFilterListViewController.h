@@ -1,5 +1,5 @@
 //
-//  MEShowCaseFilterListViewController.h
+//  MIShowCaseFilterListViewController.h
 //  MetalImage
 //
 //  Created by zsr on 2018/6/18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEShowCaseFilterListViewController : UIViewController
+@interface MIShowCaseFilterListViewController : UIViewController
 
 @end

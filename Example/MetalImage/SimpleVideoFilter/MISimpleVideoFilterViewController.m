@@ -1,16 +1,16 @@
 //
-//  MESimpleVideoFilterViewController.m
+//  MISimpleVideoFilterViewController.m
 //  MetalImage
 //
 //  Created by zsr on 2018/6/17.
 //  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
-#import "MESimpleVideoFilterViewController.h"
+#import "MISimpleVideoFilterViewController.h"
 #import <MetalImage/MetalImage.h>
 #import <Photos/Photos.h>
 
-@interface MESimpleVideoFilterViewController ()<MIVideoCameraDelegate, MIAudioVideoWriterDelegate>
+@interface MISimpleVideoFilterViewController ()<MIVideoCameraDelegate, MIAudioVideoWriterDelegate>
 {
     MIVideoCamera *_camera;
     MIFilter *_defaultFilter;
@@ -28,7 +28,7 @@
 }
 @end
 
-@implementation MESimpleVideoFilterViewController
+@implementation MISimpleVideoFilterViewController
 
 - (void)dealloc {
     [_camera stopRunning];

@@ -1,5 +1,5 @@
 //
-//  MESimpleVideoFileFilterViewController.h
+//  MISimpleCaptureImageViewController.h
 //  MetalImage
 //
 //  Created by zsr on 2018/6/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MESimpleVideoFileFilterViewController : UIViewController
+@interface MISimpleCaptureImageViewController : UIViewController
 
 @end

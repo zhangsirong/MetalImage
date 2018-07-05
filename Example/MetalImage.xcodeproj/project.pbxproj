@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		048033DB36250CC321FF4B41 /* libPods-MetalImage_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB854053FC0962FE2666A098 /* libPods-MetalImage_Example.a */; };
-		1FE3DC7C20E87D4B00D0B911 /* MESimpleImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6920E87D4A00D0B911 /* MESimpleImageFilterViewController.m */; };
-		1FE3DC7D20E87D4B00D0B911 /* MEShowCaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6E20E87D4B00D0B911 /* MEShowCaseFilterViewController.m */; };
-		1FE3DC7E20E87D4B00D0B911 /* MEShowCaseFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6F20E87D4B00D0B911 /* MEShowCaseFilterListViewController.m */; };
-		1FE3DC7F20E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7120E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.m */; };
-		1FE3DC8020E87D4B00D0B911 /* MESimpleCaptureImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7420E87D4B00D0B911 /* MESimpleCaptureImageViewController.m */; };
-		1FE3DC8120E87D4B00D0B911 /* MESimpleVideoFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7720E87D4B00D0B911 /* MESimpleVideoFilterViewController.m */; };
-		1FE3DC8220E87D4B00D0B911 /* MESimpleGifFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7A20E87D4B00D0B911 /* MESimpleGifFilterViewController.m */; };
+		1FE3DC7C20E87D4B00D0B911 /* MISimpleImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6920E87D4A00D0B911 /* MISimpleImageFilterViewController.m */; };
+		1FE3DC7D20E87D4B00D0B911 /* MIShowCaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6E20E87D4B00D0B911 /* MIShowCaseFilterViewController.m */; };
+		1FE3DC7E20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6F20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m */; };
+		1FE3DC7F20E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7120E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.m */; };
+		1FE3DC8020E87D4B00D0B911 /* MISimpleCaptureImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7420E87D4B00D0B911 /* MISimpleCaptureImageViewController.m */; };
+		1FE3DC8120E87D4B00D0B911 /* MISimpleVideoFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7720E87D4B00D0B911 /* MISimpleVideoFilterViewController.m */; };
+		1FE3DC8220E87D4B00D0B911 /* MISimpleGifFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC7A20E87D4B00D0B911 /* MISimpleGifFilterViewController.m */; };
 		1FE3DFA320E888F900D0B911 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3DF9F20E888F900D0B911 /* lena.png */; };
 		1FE3DFA420E888F900D0B911 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3DFA020E888F900D0B911 /* lookup.png */; };
 		1FE3DFA520E888F900D0B911 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3DFA120E888F900D0B911 /* video.mp4 */; };
@@ -31,20 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1FE3DC6920E87D4A00D0B911 /* MESimpleImageFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESimpleImageFilterViewController.m; sourceTree = "<group>"; };
-		1FE3DC6A20E87D4A00D0B911 /* MESimpleImageFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESimpleImageFilterViewController.h; sourceTree = "<group>"; };
-		1FE3DC6C20E87D4B00D0B911 /* MEShowCaseFilterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEShowCaseFilterListViewController.h; sourceTree = "<group>"; };
-		1FE3DC6D20E87D4B00D0B911 /* MEShowCaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEShowCaseFilterViewController.h; sourceTree = "<group>"; };
-		1FE3DC6E20E87D4B00D0B911 /* MEShowCaseFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEShowCaseFilterViewController.m; sourceTree = "<group>"; };
-		1FE3DC6F20E87D4B00D0B911 /* MEShowCaseFilterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEShowCaseFilterListViewController.m; sourceTree = "<group>"; };
-		1FE3DC7120E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESimpleVideoFileFilterViewController.m; sourceTree = "<group>"; };
-		1FE3DC7220E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESimpleVideoFileFilterViewController.h; sourceTree = "<group>"; };
-		1FE3DC7420E87D4B00D0B911 /* MESimpleCaptureImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESimpleCaptureImageViewController.m; sourceTree = "<group>"; };
-		1FE3DC7520E87D4B00D0B911 /* MESimpleCaptureImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESimpleCaptureImageViewController.h; sourceTree = "<group>"; };
-		1FE3DC7720E87D4B00D0B911 /* MESimpleVideoFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESimpleVideoFilterViewController.m; sourceTree = "<group>"; };
-		1FE3DC7820E87D4B00D0B911 /* MESimpleVideoFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESimpleVideoFilterViewController.h; sourceTree = "<group>"; };
-		1FE3DC7A20E87D4B00D0B911 /* MESimpleGifFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESimpleGifFilterViewController.m; sourceTree = "<group>"; };
-		1FE3DC7B20E87D4B00D0B911 /* MESimpleGifFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESimpleGifFilterViewController.h; sourceTree = "<group>"; };
+		1FE3DC6920E87D4A00D0B911 /* MISimpleImageFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISimpleImageFilterViewController.m; sourceTree = "<group>"; };
+		1FE3DC6A20E87D4A00D0B911 /* MISimpleImageFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISimpleImageFilterViewController.h; sourceTree = "<group>"; };
+		1FE3DC6C20E87D4B00D0B911 /* MIShowCaseFilterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIShowCaseFilterListViewController.h; sourceTree = "<group>"; };
+		1FE3DC6D20E87D4B00D0B911 /* MIShowCaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIShowCaseFilterViewController.h; sourceTree = "<group>"; };
+		1FE3DC6E20E87D4B00D0B911 /* MIShowCaseFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIShowCaseFilterViewController.m; sourceTree = "<group>"; };
+		1FE3DC6F20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIShowCaseFilterListViewController.m; sourceTree = "<group>"; };
+		1FE3DC7120E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISimpleVideoFileFilterViewController.m; sourceTree = "<group>"; };
+		1FE3DC7220E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISimpleVideoFileFilterViewController.h; sourceTree = "<group>"; };
+		1FE3DC7420E87D4B00D0B911 /* MISimpleCaptureImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISimpleCaptureImageViewController.m; sourceTree = "<group>"; };
+		1FE3DC7520E87D4B00D0B911 /* MISimpleCaptureImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISimpleCaptureImageViewController.h; sourceTree = "<group>"; };
+		1FE3DC7720E87D4B00D0B911 /* MISimpleVideoFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISimpleVideoFilterViewController.m; sourceTree = "<group>"; };
+		1FE3DC7820E87D4B00D0B911 /* MISimpleVideoFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISimpleVideoFilterViewController.h; sourceTree = "<group>"; };
+		1FE3DC7A20E87D4B00D0B911 /* MISimpleGifFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISimpleGifFilterViewController.m; sourceTree = "<group>"; };
+		1FE3DC7B20E87D4B00D0B911 /* MISimpleGifFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISimpleGifFilterViewController.h; sourceTree = "<group>"; };
 		1FE3DF9F20E888F900D0B911 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
 		1FE3DFA020E888F900D0B911 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		1FE3DFA120E888F900D0B911 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 		1FE3DC6820E87D4A00D0B911 /* SimpleImageFilter */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC6A20E87D4A00D0B911 /* MESimpleImageFilterViewController.h */,
-				1FE3DC6920E87D4A00D0B911 /* MESimpleImageFilterViewController.m */,
+				1FE3DC6A20E87D4A00D0B911 /* MISimpleImageFilterViewController.h */,
+				1FE3DC6920E87D4A00D0B911 /* MISimpleImageFilterViewController.m */,
 			);
 			path = SimpleImageFilter;
 			sourceTree = "<group>";
@@ -100,10 +100,10 @@
 		1FE3DC6B20E87D4B00D0B911 /* FilterShowCase */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC6C20E87D4B00D0B911 /* MEShowCaseFilterListViewController.h */,
-				1FE3DC6F20E87D4B00D0B911 /* MEShowCaseFilterListViewController.m */,
-				1FE3DC6D20E87D4B00D0B911 /* MEShowCaseFilterViewController.h */,
-				1FE3DC6E20E87D4B00D0B911 /* MEShowCaseFilterViewController.m */,
+				1FE3DC6C20E87D4B00D0B911 /* MIShowCaseFilterListViewController.h */,
+				1FE3DC6F20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m */,
+				1FE3DC6D20E87D4B00D0B911 /* MIShowCaseFilterViewController.h */,
+				1FE3DC6E20E87D4B00D0B911 /* MIShowCaseFilterViewController.m */,
 			);
 			path = FilterShowCase;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 		1FE3DC7020E87D4B00D0B911 /* SimpleVideoFileFilter */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC7220E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.h */,
-				1FE3DC7120E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.m */,
+				1FE3DC7220E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.h */,
+				1FE3DC7120E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.m */,
 			);
 			path = SimpleVideoFileFilter;
 			sourceTree = "<group>";
@@ -120,8 +120,8 @@
 		1FE3DC7320E87D4B00D0B911 /* SimpleCaptureImage */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC7520E87D4B00D0B911 /* MESimpleCaptureImageViewController.h */,
-				1FE3DC7420E87D4B00D0B911 /* MESimpleCaptureImageViewController.m */,
+				1FE3DC7520E87D4B00D0B911 /* MISimpleCaptureImageViewController.h */,
+				1FE3DC7420E87D4B00D0B911 /* MISimpleCaptureImageViewController.m */,
 			);
 			path = SimpleCaptureImage;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 		1FE3DC7620E87D4B00D0B911 /* SimpleVideoFilter */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC7820E87D4B00D0B911 /* MESimpleVideoFilterViewController.h */,
-				1FE3DC7720E87D4B00D0B911 /* MESimpleVideoFilterViewController.m */,
+				1FE3DC7820E87D4B00D0B911 /* MISimpleVideoFilterViewController.h */,
+				1FE3DC7720E87D4B00D0B911 /* MISimpleVideoFilterViewController.m */,
 			);
 			path = SimpleVideoFilter;
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 		1FE3DC7920E87D4B00D0B911 /* SimpleGifFilter */ = {
 			isa = PBXGroup;
 			children = (
-				1FE3DC7B20E87D4B00D0B911 /* MESimpleGifFilterViewController.h */,
-				1FE3DC7A20E87D4B00D0B911 /* MESimpleGifFilterViewController.m */,
+				1FE3DC7B20E87D4B00D0B911 /* MISimpleGifFilterViewController.h */,
+				1FE3DC7A20E87D4B00D0B911 /* MISimpleGifFilterViewController.m */,
 			);
 			path = SimpleGifFilter;
 			sourceTree = "<group>";
@@ -355,16 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE3DC7D20E87D4B00D0B911 /* MEShowCaseFilterViewController.m in Sources */,
-				1FE3DC8020E87D4B00D0B911 /* MESimpleCaptureImageViewController.m in Sources */,
-				1FE3DC7E20E87D4B00D0B911 /* MEShowCaseFilterListViewController.m in Sources */,
+				1FE3DC7D20E87D4B00D0B911 /* MIShowCaseFilterViewController.m in Sources */,
+				1FE3DC8020E87D4B00D0B911 /* MISimpleCaptureImageViewController.m in Sources */,
+				1FE3DC7E20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MIAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MIViewController.m in Sources */,
-				1FE3DC7C20E87D4B00D0B911 /* MESimpleImageFilterViewController.m in Sources */,
-				1FE3DC8120E87D4B00D0B911 /* MESimpleVideoFilterViewController.m in Sources */,
+				1FE3DC7C20E87D4B00D0B911 /* MISimpleImageFilterViewController.m in Sources */,
+				1FE3DC8120E87D4B00D0B911 /* MISimpleVideoFilterViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				1FE3DC7F20E87D4B00D0B911 /* MESimpleVideoFileFilterViewController.m in Sources */,
-				1FE3DC8220E87D4B00D0B911 /* MESimpleGifFilterViewController.m in Sources */,
+				1FE3DC7F20E87D4B00D0B911 /* MISimpleVideoFileFilterViewController.m in Sources */,
+				1FE3DC8220E87D4B00D0B911 /* MISimpleGifFilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

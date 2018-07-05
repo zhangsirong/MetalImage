@@ -1,15 +1,15 @@
 //
-//  MESimpleImageFilterViewController.m
+//  MISimpleImageFilterViewController.m
 //  MetalImage
 //
 //  Created by zsr on 2018/6/24.
 //  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
-#import "MESimpleImageFilterViewController.h"
+#import "MISimpleImageFilterViewController.h"
 #import <MetalImage/MetalImage.h>
 
-@interface MESimpleImageFilterViewController ()
+@interface MISimpleImageFilterViewController ()
 {
     UIImage *_sourceImage;
     UIImageView *_imageView;
@@ -20,7 +20,7 @@
 }
 @end
 
-@implementation MESimpleImageFilterViewController
+@implementation MISimpleImageFilterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

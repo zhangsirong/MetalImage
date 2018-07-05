@@ -1,17 +1,17 @@
 //
-//  MEShowCaseFilterViewController.m
+//  MIShowCaseFilterViewController.m
 //  MetalImage
 //
 //  Created by zsr on 2018/6/18.
 //  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
-#import "MEShowCaseFilterViewController.h"
+#import "MIShowCaseFilterViewController.h"
 #import <MetalImage/MetalImage.h>
 
-@interface MEShowCaseFilterViewController ()
+@interface MIShowCaseFilterViewController ()
 {
-    MEShowCaseFilterType _filterType;
+    MIShowCaseFilterType _filterType;
     MIVideoCaptor *_camera;
     MIFilter *_defaultFilter;
     MIProducer<MIConsumer> *_filter;
@@ -20,9 +20,9 @@
 }
 @end
 
-@implementation MEShowCaseFilterViewController
+@implementation MIShowCaseFilterViewController
 
-- (instancetype)initWithFilterType:(MEShowCaseFilterType)filterType {
+- (instancetype)initWithFilterType:(MIShowCaseFilterType)filterType {
     if (self = [super init]) {
          _filterType = filterType;
     }
@@ -103,14 +103,14 @@
 
 - (void)setupFilter {
     switch (_filterType) {
-        case MEShowCaseFilterTypeMirror: {
+        case MIShowCaseFilterTypeMirror: {
             self.title = @"Mirror";
             _slider.hidden = YES;
             _filter = [[MIMirrorFilter alloc] init];
         }
             break;
             
-        case MEShowCaseFilterTypeLookupTable: {
+        case MIShowCaseFilterTypeLookupTable: {
             self.title = @"LookupTable";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -121,7 +121,7 @@
             [(MILookupTableFilter *)_filter updateLookupTableImage:image];
         }
             break;
-        case MEShowCaseFilterTypePixellation: {
+        case MIShowCaseFilterTypePixellation: {
             self.title = @"Pixellation";
             _slider.hidden = NO;
             _slider.minimumValue = 1/300.0;
@@ -130,7 +130,7 @@
             _filter = [[MIPixellationFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeHalftone: {
+        case MIShowCaseFilterTypeHalftone: {
             self.title = @"Halftone";
             _slider.hidden = NO;
             _slider.minimumValue = 1/300.0;
@@ -139,7 +139,7 @@
             _filter = [[MIHalftoneFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeCrosshatch: {
+        case MIShowCaseFilterTypeCrosshatch: {
             self.title = @"Crosshatch";
             _slider.hidden = NO;
             _slider.minimumValue = 0.01;
@@ -148,7 +148,7 @@
             _filter = [[MICrosshatchFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeEmboss: {
+        case MIShowCaseFilterTypeEmboss: {
             self.title = @"Emboss";
             _slider.hidden = NO;
             _slider.minimumValue = 0;
@@ -157,7 +157,7 @@
             _filter = [[MIEmbossFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypePerlinNoise: {
+        case MIShowCaseFilterTypePerlinNoise: {
             self.title = @"PerlinNoise";
             _slider.hidden = NO;
             _slider.minimumValue = 0;
@@ -166,7 +166,7 @@
             _filter = [[MIPerlinNoiseFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypePixellatePosition: {
+        case MIShowCaseFilterTypePixellatePosition: {
             self.title = @"PixellatePosition";
             _slider.hidden = NO;
             _slider.minimumValue = 0;
@@ -176,7 +176,7 @@
         }
             break;
             
-        case MEShowCaseFilterTypePolarPixellate: {
+        case MIShowCaseFilterTypePolarPixellate: {
             self.title = @"PolarPixellate";
             _slider.hidden = NO;
             _slider.minimumValue = -0.1;
@@ -186,7 +186,7 @@
         }
             break;
             
-        case MEShowCaseFilterTypePolkaDot: {
+        case MIShowCaseFilterTypePolkaDot: {
             self.title = @"PolkaDot";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -195,7 +195,7 @@
             _filter = [[MIPolkaDotFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeSketch: {
+        case MIShowCaseFilterTypeSketch: {
             self.title = @"Sketch";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -204,7 +204,7 @@
             _filter = [[MISketchFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeThresholdSketch: {
+        case MIShowCaseFilterTypeThresholdSketch: {
             self.title = @"ThresholdSketch";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -213,13 +213,13 @@
             _filter = [[MIThresholdSketchFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeToon: {
+        case MIShowCaseFilterTypeToon: {
             self.title = @"Toon";
             _slider.hidden = YES;
             _filter = [[MIToonFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeSmoothToon: {
+        case MIShowCaseFilterTypeSmoothToon: {
             self.title = @"SmoothToon";
             _slider.hidden = NO;
             _slider.minimumValue = 1.0;
@@ -228,13 +228,13 @@
             _filter = [[MISmoothToonFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeCGAColorspace: {
+        case MIShowCaseFilterTypeCGAColorspace: {
             self.title = @"CGAColorspace";
             _slider.hidden = YES;
             _filter = [[MICGAColorspaceFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypePosterize: {
+        case MIShowCaseFilterTypePosterize: {
             self.title = @"Posterize";
             _slider.hidden = NO;
             _slider.minimumValue = 1.0;
@@ -243,7 +243,7 @@
             _filter = [[MIPosterizeFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeSwirl: {
+        case MIShowCaseFilterTypeSwirl: {
             self.title = @"Swirl";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -252,7 +252,7 @@
             _filter = [[MISwirlFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeBulgeDistortion: {
+        case MIShowCaseFilterTypeBulgeDistortion: {
             self.title = @"BulgeDistortion";
             _slider.hidden = NO;
             _slider.minimumValue = -1.0;
@@ -261,7 +261,7 @@
             _filter = [[MIBulgeDistortionFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypePinchDistortion: {
+        case MIShowCaseFilterTypePinchDistortion: {
             self.title = @"PinchDistortion";
             _slider.hidden = NO;
             _slider.minimumValue = -2.0;
@@ -270,7 +270,7 @@
             _filter = [[MIPinchDistortionFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeStretchDistortion: {
+        case MIShowCaseFilterTypeStretchDistortion: {
             self.title = @"StretchDistortion";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -279,7 +279,7 @@
             _filter = [[MIStretchDistortionFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeSphereRefraction: {
+        case MIShowCaseFilterTypeSphereRefraction: {
             self.title = @"SphereRefraction";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -288,7 +288,7 @@
             _filter = [[MISphereRefractionFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeGlassSphere: {
+        case MIShowCaseFilterTypeGlassSphere: {
             self.title = @"GlassSphere";
             _slider.hidden = NO;
             _slider.minimumValue = 0.0;
@@ -297,7 +297,7 @@
             _filter = [[MIGlassSphereFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeKuwahara: {
+        case MIShowCaseFilterTypeKuwahara: {
             self.title = @"Kuwahara";
             _slider.hidden = NO;
             _slider.minimumValue = 3.0;
@@ -306,13 +306,13 @@
             _filter = [[MIKuwaharaFilter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeKuwaharaRadius3: {
+        case MIShowCaseFilterTypeKuwaharaRadius3: {
             self.title = @"KuwaharaRadius3";
             _slider.hidden = YES;
             _filter = [[MIKuwaharaRadius3Filter alloc] init];
         }
             break;
-        case MEShowCaseFilterTypeVignette: {
+        case MIShowCaseFilterTypeVignette: {
             self.title = @"Vignette";
             _slider.hidden = NO;
             _slider.minimumValue = 0.5;
@@ -339,90 +339,90 @@
     NSLog(@"value = %.5f", value);
     
     switch (_filterType) {
-        case MEShowCaseFilterTypeMirror:
+        case MIShowCaseFilterTypeMirror:
             break;
             
-        case MEShowCaseFilterTypeLookupTable:
+        case MIShowCaseFilterTypeLookupTable:
             ((MILookupTableFilter *)_filter).intensity = value;
             break;
             
-        case MEShowCaseFilterTypePixellation:
+        case MIShowCaseFilterTypePixellation:
             ((MIPixellationFilter *)_filter).fractionalWidthOfAPixel = value;
             break;
             
-        case MEShowCaseFilterTypeHalftone:
+        case MIShowCaseFilterTypeHalftone:
             ((MIHalftoneFilter *)_filter).fractionalWidthOfAPixel = value;
             break;
             
-        case MEShowCaseFilterTypeCrosshatch:
+        case MIShowCaseFilterTypeCrosshatch:
             ((MICrosshatchFilter *)_filter).crossHatchSpacing = value;
             break;
             
-        case MEShowCaseFilterTypeEmboss:
+        case MIShowCaseFilterTypeEmboss:
             ((MIEmbossFilter *)_filter).intensity = value;
             break;
             
-        case MEShowCaseFilterTypePerlinNoise:
+        case MIShowCaseFilterTypePerlinNoise:
             ((MIPerlinNoiseFilter *)_filter).scale = value;
             break;
             
-        case MEShowCaseFilterTypePixellatePosition:
+        case MIShowCaseFilterTypePixellatePosition:
             ((MIPixellatePositionFilter *)_filter).radius = value;
             break;
             
-        case MEShowCaseFilterTypePolarPixellate:
+        case MIShowCaseFilterTypePolarPixellate:
             ((MIPolarPixellateFilter *)_filter).pixelSize = CGSizeMake(value, value);
             break;
             
-        case MEShowCaseFilterTypePolkaDot:
+        case MIShowCaseFilterTypePolkaDot:
             ((MIPolkaDotFilter *)_filter).fractionalWidthOfAPixel = value;
             break;
             
-        case MEShowCaseFilterTypeSketch:
+        case MIShowCaseFilterTypeSketch:
             ((MISketchFilter *)_filter).edgeStrength = value;
             break;
             
-        case MEShowCaseFilterTypeThresholdSketch:
+        case MIShowCaseFilterTypeThresholdSketch:
             ((MIThresholdSketchFilter *)_filter).edgeStrength = value;
             break;
             
-        case MEShowCaseFilterTypeSmoothToon:
+        case MIShowCaseFilterTypeSmoothToon:
             ((MISmoothToonFilter *)_filter).blurRadiusInPixels = value;
             break;
             
-        case MEShowCaseFilterTypePosterize:
+        case MIShowCaseFilterTypePosterize:
             ((MIPosterizeFilter *)_filter).colorLevels = value;
             break;
             
-        case MEShowCaseFilterTypeSwirl:
+        case MIShowCaseFilterTypeSwirl:
             ((MISwirlFilter *)_filter).angle = value;
             break;
             
-        case MEShowCaseFilterTypeBulgeDistortion:
+        case MIShowCaseFilterTypeBulgeDistortion:
             ((MIBulgeDistortionFilter *)_filter).scale = value;
             break;
             
-        case MEShowCaseFilterTypePinchDistortion:
+        case MIShowCaseFilterTypePinchDistortion:
             ((MIPinchDistortionFilter *)_filter).scale = value;
             break;
             
-        case MEShowCaseFilterTypeStretchDistortion:
+        case MIShowCaseFilterTypeStretchDistortion:
             ((MIStretchDistortionFilter *)_filter).center = CGPointMake(value, value);
             break;
             
-        case MEShowCaseFilterTypeSphereRefraction:
+        case MIShowCaseFilterTypeSphereRefraction:
             ((MISphereRefractionFilter *)_filter).radius = value;
             break;
             
-        case MEShowCaseFilterTypeGlassSphere:
+        case MIShowCaseFilterTypeGlassSphere:
             ((MIGlassSphereFilter *)_filter).radius = value;
             break;
             
-        case MEShowCaseFilterTypeKuwahara:
+        case MIShowCaseFilterTypeKuwahara:
             ((MIKuwaharaFilter *)_filter).radius = value;
             break;
 
-        case MEShowCaseFilterTypeVignette:
+        case MIShowCaseFilterTypeVignette:
             ((MIVignetteFilter *)_filter).vignetteEnd = value;
             break;
             

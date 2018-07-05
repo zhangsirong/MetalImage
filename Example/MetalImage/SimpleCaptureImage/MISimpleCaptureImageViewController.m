@@ -1,16 +1,16 @@
 //
-//  MESimpleCaptureImageViewController.m
+//  MISimpleCaptureImageViewController.m
 //  MetalImage
 //
 //  Created by zsr on 2018/6/24.
 //  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
-#import "MESimpleCaptureImageViewController.h"
+#import "MISimpleCaptureImageViewController.h"
 #import <MetalImage/MetalImage.h>
 #import <Photos/Photos.h>
 
-@interface MESimpleCaptureImageViewController ()
+@interface MISimpleCaptureImageViewController ()
 {
     MIVideoCamera *_camera;
     MIFilter *_defaultFilter;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation MESimpleCaptureImageViewController
+@implementation MISimpleCaptureImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

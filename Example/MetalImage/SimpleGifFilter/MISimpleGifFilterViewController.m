@@ -1,16 +1,16 @@
 //
-//  MESimpleGifFilterViewController.m
+//  MISimpleGifFilterViewController.m
 //  MetalImage
 //
 //  Created by zsr on 2018/6/24.
 //  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
-#import "MESimpleGifFilterViewController.h"
+#import "MISimpleGifFilterViewController.h"
 #import <MetalImage/MetalImage.h>
 #import <Photos/Photos.h>
 
-@interface MESimpleGifFilterViewController () <MIGIFWriterDelegate>
+@interface MISimpleGifFilterViewController () <MIGIFWriterDelegate>
 {
     MIVideoCamera *_camera;
     MIFilter *_defaultFilter;
@@ -28,7 +28,7 @@
 }
 @end
 
-@implementation MESimpleGifFilterViewController
+@implementation MISimpleGifFilterViewController
 - (void)dealloc {
     [_camera stopRunning];
 }

@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MetalImage: 0a017c2fcacfeca6b49d6b0fb6b3e4fe93369244
+  MetalImage: 2bb04d39c9ec93d97ddeb495f80413e4704e0770
 
 PODFILE CHECKSUM: c0faec26e6c11a7f3f388a7d622a8fe2ea805992
 

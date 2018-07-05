@@ -59,31 +59,31 @@
     UIViewController *vc;
     switch (row) {
             case 0:
-            vc = [[NSClassFromString(@"MEShowCaseFilterListViewController") alloc] init];
+            vc = [[NSClassFromString(@"MIShowCaseFilterListViewController") alloc] init];
             break;
             
             case 1:
-            vc = [[NSClassFromString(@"MESimpleVideoFilterViewController") alloc] init];
+            vc = [[NSClassFromString(@"MISimpleVideoFilterViewController") alloc] init];
             break;
             
             case 2:
-            vc = [[NSClassFromString(@"MESimpleCaptureImageViewController") alloc] init];
+            vc = [[NSClassFromString(@"MISimpleCaptureImageViewController") alloc] init];
             break;
             
             case 3:
-            vc = [[NSClassFromString(@"MESimpleImageFilterViewController") alloc] init];
+            vc = [[NSClassFromString(@"MISimpleImageFilterViewController") alloc] init];
             break;
             
             case 4:
-            vc = [[NSClassFromString(@"MESimpleGifFilterViewController") alloc] init];
+            vc = [[NSClassFromString(@"MISimpleGifFilterViewController") alloc] init];
             break;
             
             case 5:
-            vc = [[NSClassFromString(@"MESimpleVideoFileFilterViewController") alloc] init];
+            vc = [[NSClassFromString(@"MISimpleVideoFileFilterViewController") alloc] init];
             break;
             
         default:
-            vc = [[NSClassFromString(@"MEShowCaseFilterListViewController") alloc] init];
+            vc = [[NSClassFromString(@"MIShowCaseFilterListViewController") alloc] init];
             break;
     }
     
