@@ -50,12 +50,8 @@
         self.outputFrame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     }
     
-    if (!_outputTexture || !CGSizeEqualToSize(self.contentSize, _outputTexture.size)) {
-        _outputTexture = [[MITexture alloc] initWithSize:self.contentSize];
-    }
-    
-    if (!_positionBuffer ) {
-        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
+    if (!CGSizeEqualToSize(self.contentSize, _outputTexture.size)) {
+        [_outputTexture setupContentWithSize:self.contentSize];
     }
     
     if (!CGRectEqualToRect(_preRenderRect, rect)) {

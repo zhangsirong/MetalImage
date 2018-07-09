@@ -11,13 +11,24 @@
 @implementation MIFilter
 
 - (instancetype)init {
-    
     if (self = [super init]) {
         _renderPipelineState = [MIContext createRenderPipelineStateWithVertexFunction:[[self class] vertexShaderFunction]
                                                                      fragmentFunction:[[self class] fragmentShaderFunction]];
-        _passDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
+        _renderPassDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
+        _renderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
+        _renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+        
+        self.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 1.0);
+
+        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
+        _outputTexture = [[MITexture alloc] init];
     }
     return self;
+}
+
+- (void)setClearColor:(MTLClearColor)clearColor {
+    _clearColor = clearColor;
+    _renderPassDescriptor.colorAttachments[0].clearColor = _clearColor;
 }
 
 - (instancetype)initWithContentSize:(CGSize)contentSize {
@@ -44,12 +55,8 @@
         self.outputFrame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     }
     
-    if (!_outputTexture || !CGSizeEqualToSize(self.contentSize, _outputTexture.size)) {
-        _outputTexture = [[MITexture alloc] initWithSize:self.contentSize];
-    }
-    
-    if (!_positionBuffer ) {
-        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
+    if (!CGSizeEqualToSize(self.contentSize, _outputTexture.size)) {
+        [_outputTexture setupContentWithSize:self.contentSize];
     }
     
     if (!CGRectEqualToRect(_preRenderRect, rect)) {
@@ -57,15 +64,10 @@
         [MIContext updateBufferContent:_positionBuffer contentSize:self.contentSize outputFrame:rect];
     }
     
-    id<MTLTexture> framebufferTexture = _outputTexture.mtlTexture;
-    _passDescriptor.colorAttachments[0].texture = framebufferTexture;
-    _passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0.0);
-    _passDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-    _passDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+    _renderPassDescriptor.colorAttachments[0].texture = _outputTexture.mtlTexture;;
 
-    id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_passDescriptor];
+    id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_renderPassDescriptor];
     [commandEncoder setRenderPipelineState:_renderPipelineState];
-    [commandEncoder setViewport:(MTLViewport){0, 0, self.contentSize.width,self.contentSize.height, 0.0, 1.0}];
 
     [commandEncoder setVertexBuffer:_positionBuffer offset:0 atIndex:0];
     [commandEncoder setVertexBuffer:_inputTexture.textureCoordinateBuffer offset:0 atIndex:1];

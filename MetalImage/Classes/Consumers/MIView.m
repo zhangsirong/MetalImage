@@ -37,8 +37,13 @@
         }
 #endif
         self.enabled = YES;
-        _passDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
-        _clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 1.0);
+        
+        _renderPassDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
+        _renderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
+        _renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+        self.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 1.0);
+
+        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
     }
     return self;
 }
@@ -56,9 +61,6 @@
     if (!_inputTexture || !self.isEnabled) {
         return;
     }
-    if (!_positionBuffer) {
-        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
-    }
     
     if (!CGRectEqualToRect(rect, _preRenderRect)) {
         _preRenderRect = rect;
@@ -70,14 +72,10 @@
     id<MTLTexture> framebufferTexture = drawable.texture;
     
     if (drawable) {
-        _passDescriptor.colorAttachments[0].texture = framebufferTexture;
-        _passDescriptor.colorAttachments[0].clearColor = _clearColor;
-        _passDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-        _passDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+        _renderPassDescriptor.colorAttachments[0].texture = framebufferTexture;
         
-        id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_passDescriptor];
+        id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_renderPassDescriptor];
         [commandEncoder setRenderPipelineState:_renderPipelineState];
-        [commandEncoder setViewport:(MTLViewport){0, 0, self.contentSize.width, self.contentSize.height, -1.0, 1.0}];
         
         [commandEncoder setVertexBuffer:_positionBuffer offset:0 atIndex:0];
         [commandEncoder setVertexBuffer:_inputTexture.textureCoordinateBuffer offset:0 atIndex:1];
@@ -85,16 +83,16 @@
         [commandEncoder setFragmentTexture:_inputTexture.mtlTexture atIndex:0];
         [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
         [commandEncoder endEncoding];
-        
+
         [commandBuffer presentDrawable:drawable];
     }
 #endif
 }
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    [super setBackgroundColor:backgroundColor];
-    CGFloat red, green, blue, alpha;
-    [self.backgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
-    _clearColor = MTLClearColorMake(red, green, blue, alpha);
+- (void)setClearColor:(MTLClearColor)clearColor {
+    _clearColor = clearColor;
+    _renderPassDescriptor.colorAttachments[0].clearColor = _clearColor;
 }
+
+
 @end

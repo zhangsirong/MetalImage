@@ -14,7 +14,6 @@
 #if !TARGET_IPHONE_SIMULATOR
     CVMetalTextureCacheRef _CVMetalTextureCache;
 #endif
-    
 }
 
 @end
@@ -61,7 +60,6 @@ static MIContext *_sharedContext = nil;
             _metalImageLibrary = _defaultLibrary;
         }
         _commandQueue = [_device newCommandQueue];
-        _camputerCommandQueue = [_device newCommandQueue];
         _imageProcessingQueue = dispatch_queue_create("com.MetalImage.imageProcessingQueue", NULL);
     }
     return self;
@@ -147,6 +145,26 @@ static MIContext *_sharedContext = nil;
     }
     
     return pipeline;
+}
+
++ (id<MTLComputePipelineState>)createComputePipelineStateWithFunction:(NSString *)function {
+    id<MTLFunction> func = [[MIContext sharedContext].defaultLibrary newFunctionWithName:function];
+    
+    if (!func) {
+        func = [[MIContext sharedContext].metalImageLibrary newFunctionWithName:function];
+    }
+    
+    if (!func) {
+        NSLog(@"MetalImage Error : kernelFunction : %@ not fount", function);
+        return nil;
+    }
+
+    NSError *error = nil;
+    id<MTLComputePipelineState> computePipelineState = [[MIContext sharedContext].device newComputePipelineStateWithFunction:func error:&error];
+    if (!computePipelineState) {
+        NSLog(@"MetalImage Error : occurred when creating compute pipeline state: %@", error);
+    }
+    return computePipelineState;
 }
 
 + (id<MTLBuffer>)createBufferWithLength:(NSUInteger)length {

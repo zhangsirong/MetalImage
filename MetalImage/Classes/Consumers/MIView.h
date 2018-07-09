@@ -15,10 +15,9 @@
 {
     MITexture *_inputTexture;
     id<MTLRenderPipelineState> _renderPipelineState;
-    MTLRenderPassDescriptor *_passDescriptor;
+    MTLRenderPassDescriptor *_renderPassDescriptor;
     id<MTLBuffer> _positionBuffer;
     CGRect _preRenderRect;
-    MTLClearColor _clearColor;
     BOOL _layerSizeDidUpdate;
     
 #if !TARGET_IPHONE_SIMULATOR
@@ -28,5 +27,6 @@
 
 @property (nonatomic, readwrite, assign) CGSize contentSize;
 @property (nonatomic, readwrite, getter=isEnabled) BOOL enabled;
+@property (nonatomic, readwrite) MTLClearColor clearColor;
 
 @end

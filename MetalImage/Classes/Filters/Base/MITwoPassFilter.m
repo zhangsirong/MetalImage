@@ -38,12 +38,7 @@
     }
     
     if (!CGSizeEqualToSize(self.contentSize, _outputTexture.size)) {
-        _outputTexture = nil;
-        _outputTexture = [[MITexture alloc] initWithSize:self.contentSize];
-    }
-    
-    if (!_positionBuffer ) {
-        _positionBuffer = [MIContext createBufferWithLength:4 * sizeof(vector_float4)];
+        [_outputTexture setupContentWithSize:self.contentSize];
     }
     
     if (!CGRectEqualToRect(_preRenderRect,rect)) {
@@ -53,14 +48,10 @@
     
     id<MTLTexture> framebufferTexture = _firstOutputTexture.mtlTexture;
     
-    _passDescriptor.colorAttachments[0].texture = framebufferTexture;
-    _passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0.0);
-    _passDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-    _passDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
+    _renderPassDescriptor.colorAttachments[0].texture = framebufferTexture;
     
-    id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_passDescriptor];
+    id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_renderPassDescriptor];
     [commandEncoder setRenderPipelineState:_renderPipelineState];
-    [commandEncoder setViewport:(MTLViewport){0, 0, self.contentSize.width,self.contentSize.height, -1.0, 1.0}];
     
     [commandEncoder setVertexBuffer:_positionBuffer offset:0 atIndex:0];
     [commandEncoder setVertexBuffer:_inputTexture.textureCoordinateBuffer offset:0 atIndex:1];

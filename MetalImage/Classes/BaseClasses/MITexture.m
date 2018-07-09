@@ -12,6 +12,11 @@
 @interface MITexture () {
     CGSize _size;
     id<MTLBuffer> _textureCoordinateBuffer;
+#if !TARGET_IPHONE_SIMULATOR
+    CVMetalTextureRef _textureRef;
+#endif
+
+    CVPixelBufferRef _renderTarget;
 }
 
 @end
@@ -21,6 +26,13 @@
 
 + (NSInteger)maximumTextureSizeForCurrentDevice {
     return 4096;
+}
+
+- (void)dealloc {
+    if (_renderTarget) {
+        CFRelease(_renderTarget);
+        _renderTarget = NULL;
+    }
 }
 
 
@@ -227,7 +239,7 @@
         { 1.0, 0.0 },
         { 1.0, 1.0 }
     };
-    
+
     static const vector_float2 orientationRightTextureCoordinate[4] = {
         { 1.0, 1.0 },
         { 1.0, 0.0 },
@@ -313,16 +325,40 @@
 
 #pragma mark - 创建MTLTexture
 
-- (void)createMTLTextureWithSize:(CGSize)bufferSize {
-    NSInteger width = bufferSize.width;
-    NSInteger height = bufferSize.height;
+- (void)createMTLTextureWithSize:(CGSize)size {
+    NSInteger width = size.width;
+    NSInteger height = size.height;
     if (width < 1 && height < 1) {
         return;
     }
+#if !TARGET_IPHONE_SIMULATOR
+
+    CVMetalTextureCacheRef coreVideoTextureCache = [[MIContext sharedContext] CVMetalTextureCache];
+    CFDictionaryRef empty;
+    CFMutableDictionaryRef attrs;
+    empty = CFDictionaryCreate(kCFAllocatorDefault, NULL, NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    attrs = CFDictionaryCreateMutable(kCFAllocatorDefault, 1, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    CFDictionarySetValue(attrs, kCVPixelBufferIOSurfacePropertiesKey, empty);
+    CVReturn err = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32BGRA, attrs, &_renderTarget);
     
-    MTLTextureDescriptor *descriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:width height:height mipmapped:NO];
-    descriptor.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead;
-    _mtlTexture = [[MIContext sharedContext].device newTextureWithDescriptor:descriptor];
+    if (err) {
+        NSLog(@"MetalImage Error :%s", __FUNCTION__);
+    }
+    
+    CVReturn error = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, coreVideoTextureCache, _renderTarget, NULL, MTLPixelFormatBGRA8Unorm, width, height, 0, &_textureRef);
+    
+    NSAssert(error == kCVReturnSuccess, @"MetalImage Error: Failed to create CVMetalTextureRef.");
+    
+    CFRelease(attrs);
+    CFRelease(empty);
+    
+    if (_textureRef != NULL) {
+        _mtlTexture = CVMetalTextureGetTexture(_textureRef);
+        NSLog(@"MetalImage Error :%s", __FUNCTION__);
+    }
+    CFRelease(_textureRef);
+#endif
+
 }
 
 - (void)updateMTLTextureWithImageData:(uint8_t *)imageData size:(CGSize)bufferSize {
@@ -340,7 +376,6 @@
 
 - (void)updateMTLTextureWithCVBuffer:(CVBufferRef)buffer size:(CGSize)bufferSize {
 #if !TARGET_IPHONE_SIMULATOR
-    CVMetalTextureRef textureRef;
     NSInteger width = bufferSize.width;
     NSInteger height = bufferSize.height;
     
@@ -352,14 +387,14 @@
                                                                width,
                                                                height,
                                                                0,
-                                                               &textureRef);
+                                                               &_textureRef);
     
     if (error) {
         NSLog(@">> ERROR: Couldnt create texture from image");
     }
     
-    _mtlTexture = CVMetalTextureGetTexture(textureRef);
-    CVBufferRelease(textureRef);
+    _mtlTexture = CVMetalTextureGetTexture(_textureRef);
+    CFRelease(_textureRef);
 #endif
 }
 
@@ -375,7 +410,7 @@
     uint8_t *imageData = (uint8_t *) calloc(1, (int)newSize.width * (int)newSize.height * 4);
     
     CGContextRef imageContext = CGBitmapContextCreate(imageData, (int)newSize.width, (int)newSize.height, 8, (int)newSize.width * 4, genericRGBColorspace,  kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-    CGContextDrawImage(imageContext, CGRectMake(0.0, 0.0, (int)newSize.width, (int)newSize.height * 1), cgImageFromBytes);
+    CGContextDrawImage(imageContext, CGRectMake(0.0, 0.0, (int)newSize.width, (int)newSize.height), cgImageFromBytes);
     
     [self updateMTLTextureWithImageData:imageData size:newSize];
     
@@ -443,5 +478,8 @@ void MITextureReleaseDataCallback(void *info, const void *data, size_t size) {
     }
 }
 
+void MITextureDataReleaseCallback(void *releaseRefCon, const void *baseAddress) {
+    free((void *)baseAddress);
+}
 
 @end

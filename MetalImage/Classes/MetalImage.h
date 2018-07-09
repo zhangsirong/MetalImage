@@ -75,3 +75,6 @@
 #import <MetalImage/MILevelsFilter.h>
 #import <MetalImage/MISolarizeFilter.h>
 #import <MetalImage/MIAverageColorFilter.h>
+#import <MetalImage/MICropFilter.h>
+
+

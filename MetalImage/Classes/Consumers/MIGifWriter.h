@@ -21,7 +21,7 @@
 {
     MITexture *_inputTexture;
     id<MTLRenderPipelineState> _renderPipelineState;
-    MTLRenderPassDescriptor *_passDescriptor;
+    MTLRenderPassDescriptor *_renderPassDescriptor;
     
     id<MTLBuffer> _positionBuffer;
     MITexture *_outputTexture;
