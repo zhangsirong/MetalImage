@@ -25,9 +25,13 @@
 
 @implementation MISimpleVideoFileFilterViewController
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"SimpleVideoFileFilter";
+    self.title = @"Simple Video File";
 
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
     
@@ -84,6 +88,11 @@
     _slider.minimumValue = 1.0/640;
     _slider.value = 1.0/50.0;
     [self.view addSubview:_slider];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [_sourceVideo stop];
 }
 
 - (void)sliderDidChange:(UISlider *)slider {

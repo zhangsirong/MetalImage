@@ -354,7 +354,6 @@
     
     if (_textureRef != NULL) {
         _mtlTexture = CVMetalTextureGetTexture(_textureRef);
-        NSLog(@"MetalImage Error :%s", __FUNCTION__);
     }
     CFRelease(_textureRef);
 #endif

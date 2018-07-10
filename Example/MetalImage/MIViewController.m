@@ -28,11 +28,12 @@
     if (!_titles) {
         _titles = @[
                     @"Filter List",
-                    @"SimpleVideoFilter",
-                    @"SimpleCaptureImage",
-                    @"SimpleImageFilter",
-                    @"SimpleGifFilter",
-                    @"SimpleVideoFileFilter"
+                    @"Simple Video",
+                    @"Simple CaptureImage",
+                    @"Simple Image",
+                    @"Simple Gif",
+                    @"Simple VideoFile",
+                    @"Simple Blend"
                     ];
     }
     return _titles;
@@ -58,28 +59,32 @@
     NSInteger row = indexPath.row;
     UIViewController *vc;
     switch (row) {
-            case 0:
+        case 0:
             vc = [[NSClassFromString(@"MIShowCaseFilterListViewController") alloc] init];
             break;
             
-            case 1:
+        case 1:
             vc = [[NSClassFromString(@"MISimpleVideoFilterViewController") alloc] init];
             break;
             
-            case 2:
+        case 2:
             vc = [[NSClassFromString(@"MISimpleCaptureImageViewController") alloc] init];
             break;
             
-            case 3:
+        case 3:
             vc = [[NSClassFromString(@"MISimpleImageFilterViewController") alloc] init];
             break;
             
-            case 4:
+        case 4:
             vc = [[NSClassFromString(@"MISimpleGifFilterViewController") alloc] init];
             break;
             
-            case 5:
+        case 5:
             vc = [[NSClassFromString(@"MISimpleVideoFileFilterViewController") alloc] init];
+            break;
+            
+        case 6:
+            vc = [[NSClassFromString(@"MISimpleBlendFilterViewController") alloc] init];
             break;
             
         default:

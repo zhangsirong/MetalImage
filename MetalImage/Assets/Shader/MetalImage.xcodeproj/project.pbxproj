@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84FD1BBC20F4BFFC00B4C512 /* MIThresholdEdgeDetectionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8720F4BFFB00B4C512 /* MIThresholdEdgeDetectionFilter.metal */; };
+		84FD1BBD20F4BFFC00B4C512 /* MIGaussianBlurFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8820F4BFFB00B4C512 /* MIGaussianBlurFilter.metal */; };
+		84FD1BBE20F4BFFC00B4C512 /* MISobelEdgeDetectionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8920F4BFFB00B4C512 /* MISobelEdgeDetectionFilter.metal */; };
+		84FD1BBF20F4BFFC00B4C512 /* MILookupTableFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8B20F4BFFB00B4C512 /* MILookupTableFilter.metal */; };
+		84FD1BC020F4BFFC00B4C512 /* MIMonochromeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8C20F4BFFB00B4C512 /* MIMonochromeFilter.metal */; };
+		84FD1BC120F4BFFC00B4C512 /* MIGammaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8D20F4BFFB00B4C512 /* MIGammaFilter.metal */; };
+		84FD1BC220F4BFFC00B4C512 /* MIFalseColorFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8E20F4BFFB00B4C512 /* MIFalseColorFilter.metal */; };
+		84FD1BC320F4BFFC00B4C512 /* MIContrastFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B8F20F4BFFB00B4C512 /* MIContrastFilter.metal */; };
+		84FD1BC420F4BFFC00B4C512 /* MISolarizeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9020F4BFFB00B4C512 /* MISolarizeFilter.metal */; };
+		84FD1BC520F4BFFC00B4C512 /* MIHazeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9120F4BFFB00B4C512 /* MIHazeFilter.metal */; };
+		84FD1BC620F4BFFC00B4C512 /* MIGrayscaleFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9220F4BFFB00B4C512 /* MIGrayscaleFilter.metal */; };
+		84FD1BC720F4BFFC00B4C512 /* MIBrightnessFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9320F4BFFB00B4C512 /* MIBrightnessFilter.metal */; };
+		84FD1BC820F4BFFC00B4C512 /* MIColorInvertFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9420F4BFFB00B4C512 /* MIColorInvertFilter.metal */; };
+		84FD1BC920F4BFFC00B4C512 /* MIHueFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9520F4BFFB00B4C512 /* MIHueFilter.metal */; };
+		84FD1BCA20F4BFFC00B4C512 /* MIRGBFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9620F4BFFB00B4C512 /* MIRGBFilter.metal */; };
+		84FD1BCB20F4BFFC00B4C512 /* MIColorAverageFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9720F4BFFB00B4C512 /* MIColorAverageFilter.metal */; };
+		84FD1BCC20F4BFFC00B4C512 /* MIColorMatrixFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9820F4BFFB00B4C512 /* MIColorMatrixFilter.metal */; };
+		84FD1BCD20F4BFFC00B4C512 /* MISaturationFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9920F4BFFB00B4C512 /* MISaturationFilter.metal */; };
+		84FD1BCE20F4BFFC00B4C512 /* MIExposureFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9A20F4BFFB00B4C512 /* MIExposureFilter.metal */; };
+		84FD1BCF20F4BFFC00B4C512 /* MILuminanceThresholdFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9B20F4BFFB00B4C512 /* MILuminanceThresholdFilter.metal */; };
+		84FD1BD020F4BFFC00B4C512 /* MILevelsFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9C20F4BFFB00B4C512 /* MILevelsFilter.metal */; };
+		84FD1BD120F4BFFC00B4C512 /* MIDefaultFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9D20F4BFFB00B4C512 /* MIDefaultFilter.metal */; };
+		84FD1BD220F4BFFC00B4C512 /* MIVignetteFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1B9F20F4BFFC00B4C512 /* MIVignetteFilter.metal */; };
+		84FD1BD320F4BFFC00B4C512 /* MIPolarPixellateFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA020F4BFFC00B4C512 /* MIPolarPixellateFilter.metal */; };
+		84FD1BD420F4BFFC00B4C512 /* MIKuwaharaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA120F4BFFC00B4C512 /* MIKuwaharaFilter.metal */; };
+		84FD1BD520F4BFFC00B4C512 /* MIPixellatePositionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA220F4BFFC00B4C512 /* MIPixellatePositionFilter.metal */; };
+		84FD1BD620F4BFFC00B4C512 /* MIThresholdSketchFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA320F4BFFC00B4C512 /* MIThresholdSketchFilter.metal */; };
+		84FD1BD720F4BFFC00B4C512 /* MISphereRefractionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA420F4BFFC00B4C512 /* MISphereRefractionFilter.metal */; };
+		84FD1BD820F4BFFC00B4C512 /* MISwirlFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA520F4BFFC00B4C512 /* MISwirlFilter.metal */; };
+		84FD1BD920F4BFFC00B4C512 /* MIPinchDistortionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA620F4BFFC00B4C512 /* MIPinchDistortionFilter.metal */; };
+		84FD1BDA20F4BFFC00B4C512 /* MICrosshatchFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA720F4BFFC00B4C512 /* MICrosshatchFilter.metal */; };
+		84FD1BDB20F4BFFC00B4C512 /* MIHalftoneFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA820F4BFFC00B4C512 /* MIHalftoneFilter.metal */; };
+		84FD1BDC20F4BFFC00B4C512 /* MIPosterizeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BA920F4BFFC00B4C512 /* MIPosterizeFilter.metal */; };
+		84FD1BDD20F4BFFC00B4C512 /* MIStretchDistortionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAA20F4BFFC00B4C512 /* MIStretchDistortionFilter.metal */; };
+		84FD1BDE20F4BFFC00B4C512 /* MIPolkaDotFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAB20F4BFFC00B4C512 /* MIPolkaDotFilter.metal */; };
+		84FD1BDF20F4BFFC00B4C512 /* MISketchFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAC20F4BFFC00B4C512 /* MISketchFilter.metal */; };
+		84FD1BE020F4BFFC00B4C512 /* MIGlassSphereFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAD20F4BFFC00B4C512 /* MIGlassSphereFilter.metal */; };
+		84FD1BE120F4BFFC00B4C512 /* MIPixellationFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAE20F4BFFC00B4C512 /* MIPixellationFilter.metal */; };
+		84FD1BE220F4BFFC00B4C512 /* MIToonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BAF20F4BFFC00B4C512 /* MIToonFilter.metal */; };
+		84FD1BE320F4BFFC00B4C512 /* MIPerlinNoiseFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB020F4BFFC00B4C512 /* MIPerlinNoiseFilter.metal */; };
+		84FD1BE420F4BFFC00B4C512 /* MIKuwaharaRadius3Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB120F4BFFC00B4C512 /* MIKuwaharaRadius3Filter.metal */; };
+		84FD1BE520F4BFFC00B4C512 /* MIBulgeDistortionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB220F4BFFC00B4C512 /* MIBulgeDistortionFilter.metal */; };
+		84FD1BE620F4BFFC00B4C512 /* MICGAColorspaceFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB320F4BFFC00B4C512 /* MICGAColorspaceFilter.metal */; };
+		84FD1BE720F4BFFC00B4C512 /* MIMirrorFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB420F4BFFC00B4C512 /* MIMirrorFilter.metal */; };
+		84FD1BE820F4BFFC00B4C512 /* MIBlendFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB720F4BFFC00B4C512 /* MIBlendFilter.metal */; };
+		84FD1BE920F4BFFC00B4C512 /* MI3x3TextureSamplingFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BB920F4BFFC00B4C512 /* MI3x3TextureSamplingFilter.metal */; };
+		84FD1BEA20F4BFFC00B4C512 /* MI3x3ConvolutionFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BBA20F4BFFC00B4C512 /* MI3x3ConvolutionFilter.metal */; };
+		84FD1BEB20F4BFFC00B4C512 /* MITwoInputFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1BBB20F4BFFC00B4C512 /* MITwoInputFilter.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84FD1B7C20F4BFBE00B4C512 /* MetalImage.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = MetalImage.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FD1B8720F4BFFB00B4C512 /* MIThresholdEdgeDetectionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIThresholdEdgeDetectionFilter.metal; sourceTree = "<group>"; };
+		84FD1B8820F4BFFB00B4C512 /* MIGaussianBlurFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIGaussianBlurFilter.metal; sourceTree = "<group>"; };
+		84FD1B8920F4BFFB00B4C512 /* MISobelEdgeDetectionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISobelEdgeDetectionFilter.metal; sourceTree = "<group>"; };
+		84FD1B8B20F4BFFB00B4C512 /* MILookupTableFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MILookupTableFilter.metal; sourceTree = "<group>"; };
+		84FD1B8C20F4BFFB00B4C512 /* MIMonochromeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIMonochromeFilter.metal; sourceTree = "<group>"; };
+		84FD1B8D20F4BFFB00B4C512 /* MIGammaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIGammaFilter.metal; sourceTree = "<group>"; };
+		84FD1B8E20F4BFFB00B4C512 /* MIFalseColorFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIFalseColorFilter.metal; sourceTree = "<group>"; };
+		84FD1B8F20F4BFFB00B4C512 /* MIContrastFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIContrastFilter.metal; sourceTree = "<group>"; };
+		84FD1B9020F4BFFB00B4C512 /* MISolarizeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISolarizeFilter.metal; sourceTree = "<group>"; };
+		84FD1B9120F4BFFB00B4C512 /* MIHazeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIHazeFilter.metal; sourceTree = "<group>"; };
+		84FD1B9220F4BFFB00B4C512 /* MIGrayscaleFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIGrayscaleFilter.metal; sourceTree = "<group>"; };
+		84FD1B9320F4BFFB00B4C512 /* MIBrightnessFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIBrightnessFilter.metal; sourceTree = "<group>"; };
+		84FD1B9420F4BFFB00B4C512 /* MIColorInvertFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIColorInvertFilter.metal; sourceTree = "<group>"; };
+		84FD1B9520F4BFFB00B4C512 /* MIHueFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIHueFilter.metal; sourceTree = "<group>"; };
+		84FD1B9620F4BFFB00B4C512 /* MIRGBFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIRGBFilter.metal; sourceTree = "<group>"; };
+		84FD1B9720F4BFFB00B4C512 /* MIColorAverageFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIColorAverageFilter.metal; sourceTree = "<group>"; };
+		84FD1B9820F4BFFB00B4C512 /* MIColorMatrixFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIColorMatrixFilter.metal; sourceTree = "<group>"; };
+		84FD1B9920F4BFFB00B4C512 /* MISaturationFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISaturationFilter.metal; sourceTree = "<group>"; };
+		84FD1B9A20F4BFFB00B4C512 /* MIExposureFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIExposureFilter.metal; sourceTree = "<group>"; };
+		84FD1B9B20F4BFFB00B4C512 /* MILuminanceThresholdFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MILuminanceThresholdFilter.metal; sourceTree = "<group>"; };
+		84FD1B9C20F4BFFB00B4C512 /* MILevelsFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MILevelsFilter.metal; sourceTree = "<group>"; };
+		84FD1B9D20F4BFFB00B4C512 /* MIDefaultFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIDefaultFilter.metal; sourceTree = "<group>"; };
+		84FD1B9F20F4BFFC00B4C512 /* MIVignetteFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIVignetteFilter.metal; sourceTree = "<group>"; };
+		84FD1BA020F4BFFC00B4C512 /* MIPolarPixellateFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPolarPixellateFilter.metal; sourceTree = "<group>"; };
+		84FD1BA120F4BFFC00B4C512 /* MIKuwaharaFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIKuwaharaFilter.metal; sourceTree = "<group>"; };
+		84FD1BA220F4BFFC00B4C512 /* MIPixellatePositionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPixellatePositionFilter.metal; sourceTree = "<group>"; };
+		84FD1BA320F4BFFC00B4C512 /* MIThresholdSketchFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIThresholdSketchFilter.metal; sourceTree = "<group>"; };
+		84FD1BA420F4BFFC00B4C512 /* MISphereRefractionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISphereRefractionFilter.metal; sourceTree = "<group>"; };
+		84FD1BA520F4BFFC00B4C512 /* MISwirlFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISwirlFilter.metal; sourceTree = "<group>"; };
+		84FD1BA620F4BFFC00B4C512 /* MIPinchDistortionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPinchDistortionFilter.metal; sourceTree = "<group>"; };
+		84FD1BA720F4BFFC00B4C512 /* MICrosshatchFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MICrosshatchFilter.metal; sourceTree = "<group>"; };
+		84FD1BA820F4BFFC00B4C512 /* MIHalftoneFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIHalftoneFilter.metal; sourceTree = "<group>"; };
+		84FD1BA920F4BFFC00B4C512 /* MIPosterizeFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPosterizeFilter.metal; sourceTree = "<group>"; };
+		84FD1BAA20F4BFFC00B4C512 /* MIStretchDistortionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIStretchDistortionFilter.metal; sourceTree = "<group>"; };
+		84FD1BAB20F4BFFC00B4C512 /* MIPolkaDotFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPolkaDotFilter.metal; sourceTree = "<group>"; };
+		84FD1BAC20F4BFFC00B4C512 /* MISketchFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MISketchFilter.metal; sourceTree = "<group>"; };
+		84FD1BAD20F4BFFC00B4C512 /* MIGlassSphereFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIGlassSphereFilter.metal; sourceTree = "<group>"; };
+		84FD1BAE20F4BFFC00B4C512 /* MIPixellationFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPixellationFilter.metal; sourceTree = "<group>"; };
+		84FD1BAF20F4BFFC00B4C512 /* MIToonFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIToonFilter.metal; sourceTree = "<group>"; };
+		84FD1BB020F4BFFC00B4C512 /* MIPerlinNoiseFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIPerlinNoiseFilter.metal; sourceTree = "<group>"; };
+		84FD1BB120F4BFFC00B4C512 /* MIKuwaharaRadius3Filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIKuwaharaRadius3Filter.metal; sourceTree = "<group>"; };
+		84FD1BB220F4BFFC00B4C512 /* MIBulgeDistortionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIBulgeDistortionFilter.metal; sourceTree = "<group>"; };
+		84FD1BB320F4BFFC00B4C512 /* MICGAColorspaceFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MICGAColorspaceFilter.metal; sourceTree = "<group>"; };
+		84FD1BB420F4BFFC00B4C512 /* MIMirrorFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIMirrorFilter.metal; sourceTree = "<group>"; };
+		84FD1BB520F4BFFC00B4C512 /* MIMetalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMetalHeader.h; sourceTree = "<group>"; };
+		84FD1BB720F4BFFC00B4C512 /* MIBlendFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MIBlendFilter.metal; sourceTree = "<group>"; };
+		84FD1BB920F4BFFC00B4C512 /* MI3x3TextureSamplingFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MI3x3TextureSamplingFilter.metal; sourceTree = "<group>"; };
+		84FD1BBA20F4BFFC00B4C512 /* MI3x3ConvolutionFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MI3x3ConvolutionFilter.metal; sourceTree = "<group>"; };
+		84FD1BBB20F4BFFC00B4C512 /* MITwoInputFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MITwoInputFilter.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		84FD1B7520F4BFBE00B4C512 = {
+			isa = PBXGroup;
+			children = (
+				84FD1B9D20F4BFFB00B4C512 /* MIDefaultFilter.metal */,
+				84FD1BB520F4BFFC00B4C512 /* MIMetalHeader.h */,
+				84FD1BB820F4BFFC00B4C512 /* Base */,
+				84FD1BB620F4BFFC00B4C512 /* Blend */,
+				84FD1B8A20F4BFFB00B4C512 /* ColorProcessing */,
+				84FD1B9E20F4BFFB00B4C512 /* Effects */,
+				84FD1B8620F4BFFB00B4C512 /* imageProcessing */,
+				84FD1B7D20F4BFBE00B4C512 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84FD1B7D20F4BFBE00B4C512 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1B7C20F4BFBE00B4C512 /* MetalImage.metallib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84FD1B8620F4BFFB00B4C512 /* imageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1B8720F4BFFB00B4C512 /* MIThresholdEdgeDetectionFilter.metal */,
+				84FD1B8820F4BFFB00B4C512 /* MIGaussianBlurFilter.metal */,
+				84FD1B8920F4BFFB00B4C512 /* MISobelEdgeDetectionFilter.metal */,
+			);
+			path = imageProcessing;
+			sourceTree = "<group>";
+		};
+		84FD1B8A20F4BFFB00B4C512 /* ColorProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1B8B20F4BFFB00B4C512 /* MILookupTableFilter.metal */,
+				84FD1B8C20F4BFFB00B4C512 /* MIMonochromeFilter.metal */,
+				84FD1B8D20F4BFFB00B4C512 /* MIGammaFilter.metal */,
+				84FD1B8E20F4BFFB00B4C512 /* MIFalseColorFilter.metal */,
+				84FD1B8F20F4BFFB00B4C512 /* MIContrastFilter.metal */,
+				84FD1B9020F4BFFB00B4C512 /* MISolarizeFilter.metal */,
+				84FD1B9120F4BFFB00B4C512 /* MIHazeFilter.metal */,
+				84FD1B9220F4BFFB00B4C512 /* MIGrayscaleFilter.metal */,
+				84FD1B9320F4BFFB00B4C512 /* MIBrightnessFilter.metal */,
+				84FD1B9420F4BFFB00B4C512 /* MIColorInvertFilter.metal */,
+				84FD1B9520F4BFFB00B4C512 /* MIHueFilter.metal */,
+				84FD1B9620F4BFFB00B4C512 /* MIRGBFilter.metal */,
+				84FD1B9720F4BFFB00B4C512 /* MIColorAverageFilter.metal */,
+				84FD1B9820F4BFFB00B4C512 /* MIColorMatrixFilter.metal */,
+				84FD1B9920F4BFFB00B4C512 /* MISaturationFilter.metal */,
+				84FD1B9A20F4BFFB00B4C512 /* MIExposureFilter.metal */,
+				84FD1B9B20F4BFFB00B4C512 /* MILuminanceThresholdFilter.metal */,
+				84FD1B9C20F4BFFB00B4C512 /* MILevelsFilter.metal */,
+			);
+			path = ColorProcessing;
+			sourceTree = "<group>";
+		};
+		84FD1B9E20F4BFFB00B4C512 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1B9F20F4BFFC00B4C512 /* MIVignetteFilter.metal */,
+				84FD1BA020F4BFFC00B4C512 /* MIPolarPixellateFilter.metal */,
+				84FD1BA120F4BFFC00B4C512 /* MIKuwaharaFilter.metal */,
+				84FD1BA220F4BFFC00B4C512 /* MIPixellatePositionFilter.metal */,
+				84FD1BA320F4BFFC00B4C512 /* MIThresholdSketchFilter.metal */,
+				84FD1BA420F4BFFC00B4C512 /* MISphereRefractionFilter.metal */,
+				84FD1BA520F4BFFC00B4C512 /* MISwirlFilter.metal */,
+				84FD1BA620F4BFFC00B4C512 /* MIPinchDistortionFilter.metal */,
+				84FD1BA720F4BFFC00B4C512 /* MICrosshatchFilter.metal */,
+				84FD1BA820F4BFFC00B4C512 /* MIHalftoneFilter.metal */,
+				84FD1BA920F4BFFC00B4C512 /* MIPosterizeFilter.metal */,
+				84FD1BAA20F4BFFC00B4C512 /* MIStretchDistortionFilter.metal */,
+				84FD1BAB20F4BFFC00B4C512 /* MIPolkaDotFilter.metal */,
+				84FD1BAC20F4BFFC00B4C512 /* MISketchFilter.metal */,
+				84FD1BAD20F4BFFC00B4C512 /* MIGlassSphereFilter.metal */,
+				84FD1BAE20F4BFFC00B4C512 /* MIPixellationFilter.metal */,
+				84FD1BAF20F4BFFC00B4C512 /* MIToonFilter.metal */,
+				84FD1BB020F4BFFC00B4C512 /* MIPerlinNoiseFilter.metal */,
+				84FD1BB120F4BFFC00B4C512 /* MIKuwaharaRadius3Filter.metal */,
+				84FD1BB220F4BFFC00B4C512 /* MIBulgeDistortionFilter.metal */,
+				84FD1BB320F4BFFC00B4C512 /* MICGAColorspaceFilter.metal */,
+				84FD1BB420F4BFFC00B4C512 /* MIMirrorFilter.metal */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		84FD1BB620F4BFFC00B4C512 /* Blend */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1BB720F4BFFC00B4C512 /* MIBlendFilter.metal */,
+			);
+			path = Blend;
+			sourceTree = "<group>";
+		};
+		84FD1BB820F4BFFC00B4C512 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84FD1BB920F4BFFC00B4C512 /* MI3x3TextureSamplingFilter.metal */,
+				84FD1BBA20F4BFFC00B4C512 /* MI3x3ConvolutionFilter.metal */,
+				84FD1BBB20F4BFFC00B4C512 /* MITwoInputFilter.metal */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84FD1B7B20F4BFBE00B4C512 /* MetalImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84FD1B8320F4BFBE00B4C512 /* Build configuration list for PBXNativeTarget "MetalImage" */;
+			buildPhases = (
+				84FD1B7A20F4BFBE00B4C512 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalImage;
+			productName = MetalImage;
+			productReference = 84FD1B7C20F4BFBE00B4C512 /* MetalImage.metallib */;
+			productType = "com.apple.product-type.metal-library";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84FD1B7620F4BFBE00B4C512 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Beauty Inc";
+				TargetAttributes = {
+					84FD1B7B20F4BFBE00B4C512 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 84FD1B7920F4BFBE00B4C512 /* Build configuration list for PBXProject "MetalImage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84FD1B7520F4BFBE00B4C512;
+			productRefGroup = 84FD1B7D20F4BFBE00B4C512 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84FD1B7B20F4BFBE00B4C512 /* MetalImage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84FD1B7A20F4BFBE00B4C512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FD1BCF20F4BFFC00B4C512 /* MILuminanceThresholdFilter.metal in Sources */,
+				84FD1BBF20F4BFFC00B4C512 /* MILookupTableFilter.metal in Sources */,
+				84FD1BDD20F4BFFC00B4C512 /* MIStretchDistortionFilter.metal in Sources */,
+				84FD1BD020F4BFFC00B4C512 /* MILevelsFilter.metal in Sources */,
+				84FD1BCC20F4BFFC00B4C512 /* MIColorMatrixFilter.metal in Sources */,
+				84FD1BE620F4BFFC00B4C512 /* MICGAColorspaceFilter.metal in Sources */,
+				84FD1BDB20F4BFFC00B4C512 /* MIHalftoneFilter.metal in Sources */,
+				84FD1BCB20F4BFFC00B4C512 /* MIColorAverageFilter.metal in Sources */,
+				84FD1BD520F4BFFC00B4C512 /* MIPixellatePositionFilter.metal in Sources */,
+				84FD1BC320F4BFFC00B4C512 /* MIContrastFilter.metal in Sources */,
+				84FD1BD920F4BFFC00B4C512 /* MIPinchDistortionFilter.metal in Sources */,
+				84FD1BD220F4BFFC00B4C512 /* MIVignetteFilter.metal in Sources */,
+				84FD1BD320F4BFFC00B4C512 /* MIPolarPixellateFilter.metal in Sources */,
+				84FD1BCA20F4BFFC00B4C512 /* MIRGBFilter.metal in Sources */,
+				84FD1BE920F4BFFC00B4C512 /* MI3x3TextureSamplingFilter.metal in Sources */,
+				84FD1BDC20F4BFFC00B4C512 /* MIPosterizeFilter.metal in Sources */,
+				84FD1BE320F4BFFC00B4C512 /* MIPerlinNoiseFilter.metal in Sources */,
+				84FD1BC620F4BFFC00B4C512 /* MIGrayscaleFilter.metal in Sources */,
+				84FD1BD720F4BFFC00B4C512 /* MISphereRefractionFilter.metal in Sources */,
+				84FD1BC120F4BFFC00B4C512 /* MIGammaFilter.metal in Sources */,
+				84FD1BD120F4BFFC00B4C512 /* MIDefaultFilter.metal in Sources */,
+				84FD1BD620F4BFFC00B4C512 /* MIThresholdSketchFilter.metal in Sources */,
+				84FD1BE520F4BFFC00B4C512 /* MIBulgeDistortionFilter.metal in Sources */,
+				84FD1BE420F4BFFC00B4C512 /* MIKuwaharaRadius3Filter.metal in Sources */,
+				84FD1BBE20F4BFFC00B4C512 /* MISobelEdgeDetectionFilter.metal in Sources */,
+				84FD1BE720F4BFFC00B4C512 /* MIMirrorFilter.metal in Sources */,
+				84FD1BDE20F4BFFC00B4C512 /* MIPolkaDotFilter.metal in Sources */,
+				84FD1BEA20F4BFFC00B4C512 /* MI3x3ConvolutionFilter.metal in Sources */,
+				84FD1BC820F4BFFC00B4C512 /* MIColorInvertFilter.metal in Sources */,
+				84FD1BEB20F4BFFC00B4C512 /* MITwoInputFilter.metal in Sources */,
+				84FD1BC020F4BFFC00B4C512 /* MIMonochromeFilter.metal in Sources */,
+				84FD1BC720F4BFFC00B4C512 /* MIBrightnessFilter.metal in Sources */,
+				84FD1BBC20F4BFFC00B4C512 /* MIThresholdEdgeDetectionFilter.metal in Sources */,
+				84FD1BBD20F4BFFC00B4C512 /* MIGaussianBlurFilter.metal in Sources */,
+				84FD1BE820F4BFFC00B4C512 /* MIBlendFilter.metal in Sources */,
+				84FD1BDA20F4BFFC00B4C512 /* MICrosshatchFilter.metal in Sources */,
+				84FD1BDF20F4BFFC00B4C512 /* MISketchFilter.metal in Sources */,
+				84FD1BC920F4BFFC00B4C512 /* MIHueFilter.metal in Sources */,
+				84FD1BC520F4BFFC00B4C512 /* MIHazeFilter.metal in Sources */,
+				84FD1BC220F4BFFC00B4C512 /* MIFalseColorFilter.metal in Sources */,
+				84FD1BE120F4BFFC00B4C512 /* MIPixellationFilter.metal in Sources */,
+				84FD1BD820F4BFFC00B4C512 /* MISwirlFilter.metal in Sources */,
+				84FD1BCE20F4BFFC00B4C512 /* MIExposureFilter.metal in Sources */,
+				84FD1BE020F4BFFC00B4C512 /* MIGlassSphereFilter.metal in Sources */,
+				84FD1BE220F4BFFC00B4C512 /* MIToonFilter.metal in Sources */,
+				84FD1BC420F4BFFC00B4C512 /* MISolarizeFilter.metal in Sources */,
+				84FD1BD420F4BFFC00B4C512 /* MIKuwaharaFilter.metal in Sources */,
+				84FD1BCD20F4BFFC00B4C512 /* MISaturationFilter.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84FD1B8120F4BFBE00B4C512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84FD1B8220F4BFBE00B4C512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		84FD1B8420F4BFBE00B4C512 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G583SJY324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84FD1B8520F4BFBE00B4C512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G583SJY324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84FD1B7920F4BFBE00B4C512 /* Build configuration list for PBXProject "MetalImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FD1B8120F4BFBE00B4C512 /* Debug */,
+				84FD1B8220F4BFBE00B4C512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84FD1B8320F4BFBE00B4C512 /* Build configuration list for PBXNativeTarget "MetalImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FD1B8420F4BFBE00B4C512 /* Debug */,
+				84FD1B8520F4BFBE00B4C512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84FD1B7620F4BFBE00B4C512 /* Project object */;
+}

@@ -27,7 +27,7 @@
         _secondInputTexture = nil;
     }];
     
-    [self produceAtTime:time commandBuffer:commandBuffer];
+    [super renderRect:rect atTime:time commandBuffer:commandBuffer];
 }
 
 - (void)setVertexFragmentBufferOrTexture:(id<MTLRenderCommandEncoder>)commandEncoder {

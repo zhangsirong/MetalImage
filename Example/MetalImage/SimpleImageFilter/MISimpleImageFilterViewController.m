@@ -26,8 +26,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithRed:0 green:104.0/255.0 blue:55.0/255.0 alpha:1.0];
-
-    self.title = @"SimpleImageFilter";
+    self.title = @"Simple Image";
 
     _sourceImage = [UIImage imageNamed:@"lena"];
     _imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];

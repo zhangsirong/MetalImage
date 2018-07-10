@@ -76,5 +76,4 @@
 #import <MetalImage/MISolarizeFilter.h>
 #import <MetalImage/MIAverageColorFilter.h>
 #import <MetalImage/MICropFilter.h>
-
-
+#import <MetalImage/MIBlendFilter.h>
