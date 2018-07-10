@@ -247,8 +247,6 @@
     }
     
     if (_assetReader.status == AVAssetReaderStatusReading) {
-        dispatch_semaphore_wait(_imageProcessingSemaphore, DISPATCH_TIME_FOREVER);
-
         CMSampleBufferRef videoSampleBuffer = [_readerVideoTrackOutput copyNextSampleBuffer];
         if (videoSampleBuffer == NULL) {
             _decodingDidEnd = YES;
@@ -274,7 +272,6 @@
             id<MTLCommandBuffer> commandBuffer = [[MIContext sharedContext].commandQueue commandBuffer];
             [self processVideoSampleBuffer:videoSampleBuffer commandBuffer:commandBuffer];
             [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> commandBuffer) {
-                dispatch_semaphore_signal(_imageProcessingSemaphore);
                 CMSampleBufferInvalidate(videoSampleBuffer);
                 CFRelease(videoSampleBuffer);
             }];
