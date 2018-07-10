@@ -18,6 +18,8 @@
     MIView *_displayView;
     MIGifWriter *_gifWriter;
     
+    MICropFilter *_cropFilter;
+
     MIFilter *_viewFilter;
     MIFilter *_gifWriterFilter;
     
@@ -91,35 +93,32 @@
 }
 
 - (void)startInitCameraConfig {
-    
     NSInteger displayViewWidth = _displayView.contentSize.width;
-    NSInteger displayViewHeight = _displayView.contentSize.height;
     
     _camera = [[MIVideoCamera alloc] initWithCameraPosition:AVCaptureDevicePositionFront sessionPreset:AVCaptureSessionPresetPhoto];
     _camera.outputFrame = CGRectMake(0, 0, displayViewWidth, ceil(displayViewWidth * 4.0 /3.0));
         
     _defaultFilter = [[MIFilter alloc] init];
     _processFilter = [[MIGrayscaleFilter alloc] init];
+    _cropFilter = [[MICropFilter alloc] initWithCropRegion:CGRectMake(0, 0.125, 1, 0.75)];
     
 //    设置在_displayView里面渲染的区域
     _viewFilter = [[MIFilter alloc] init];//做在view中的位置调整
-    _viewFilter.outputFrame = CGRectMake(0,
-                                         (int)((displayViewHeight - (displayViewWidth * 4.0/3)) * 0.5),
-                                         displayViewWidth,
-                                         (int)(displayViewWidth * 4.0/3));
+    _viewFilter.outputFrame = CGRectMake(0, 150, displayViewWidth, displayViewWidth);
     
     _gifWriterFilter = [[MIFilter alloc] init];//做在gif中的位置调整
-    _gifWriterFilter.outputFrame = CGRectMake(0, (240 - 320) / 2, 240, 240 / 3 * 4);
+    _gifWriterFilter.outputFrame = CGRectMake(0, 0, 240, 240);
     
     _gifWriter = [[MIGifWriter alloc] initWithContentSize:CGSizeMake(240, 240) outputURL:[NSURL fileURLWithPath:_filePath] maxFrame:27];
     _gifWriter.delegate = self;
     
-    
     //处理链
     [_camera addConsumer:_defaultFilter];
     [_defaultFilter addConsumer:_processFilter];
-    [_processFilter addConsumer:_viewFilter];
-    [_processFilter addConsumer:_gifWriterFilter];
+    [_processFilter addConsumer:_cropFilter];
+    
+    [_cropFilter addConsumer:_gifWriterFilter];
+    [_cropFilter addConsumer:_viewFilter];
     
     [_viewFilter addConsumer:_displayView];
     [_gifWriterFilter addConsumer:_gifWriter];

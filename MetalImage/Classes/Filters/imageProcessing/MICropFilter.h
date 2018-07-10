@@ -8,6 +8,9 @@
 
 #import "MIFilter.h"
 
+/**
+ contentSize裁剪过后的尺寸
+ */
 @interface MICropFilter : MIFilter
 
  @property (nonatomic, readwrite) CGRect cropRegion;
