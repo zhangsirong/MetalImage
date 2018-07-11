@@ -17,7 +17,9 @@
     MIView *_displayView;
     MIFilter *_processFilter;
     MIAudioVideoWriter *_videoWriter;
+    
     UISlider *_slider;
+    UILabel *_processLabel;
 }
 
 @end
@@ -88,6 +90,14 @@
     _slider.minimumValue = 1.0/640;
     _slider.value = 1.0/50.0;
     [self.view addSubview:_slider];
+    
+    _processLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 150, width - 100, 50)];
+    _processLabel.textColor = [UIColor colorWithRed:0 green:104.0/255.0 blue:55.0/255.0 alpha:1.0];
+    _processLabel.text = @"process: 0%";
+    _processLabel.textAlignment = NSTextAlignmentRight;
+    _processLabel.font = [UIFont systemFontOfSize:20.0];
+    
+    [self.view addSubview:_processLabel];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -100,16 +110,20 @@
 }
 
 
-
 #pragma mark - MIVideoDelegate
 
 - (void)video:(MIVideo *)video willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
-    NSLog(@"progress : %.2f",video.progress);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _processLabel.text = [NSString stringWithFormat:@"process: %.2f\%%", video.progress * 100.0];
+    });
 }
 
 - (void)videoDidEnd:(MIVideo *)video {
     [_videoWriter finishWriting];
     NSLog(@"%s", __FUNCTION__);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _processLabel.text = @"process: 100%";
+    });
 }
 
 
@@ -156,7 +170,7 @@
 }
 
 - (void)audioVideoWriter:(MIAudioVideoWriter *)audioVideoWriter isWritingAtTime:(CMTime)frameTime {
-    NSLog(@"time:%.2f",CMTimeGetSeconds(frameTime));
+//    NSLog(@"time:%.2f",CMTimeGetSeconds(frameTime));
 
 }
 

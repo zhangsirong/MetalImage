@@ -1,1 +1,0 @@
-../../../../../MetalImage/Classes/Producers/MIVideoCaptor.h

@@ -1,1 +1,0 @@
-../../../../../MetalImage/Classes/Filters/Effects/MIKuwaharaRadius3Filter.h

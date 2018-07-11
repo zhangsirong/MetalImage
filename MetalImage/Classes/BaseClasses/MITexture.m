@@ -346,8 +346,9 @@
     }
     
     CVReturn error = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, coreVideoTextureCache, _renderTarget, NULL, MTLPixelFormatBGRA8Unorm, width, height, 0, &_textureRef);
-    
-    NSAssert(error == kCVReturnSuccess, @"MetalImage Error: Failed to create CVMetalTextureRef.");
+    if (error) {
+        NSLog(@"MetalImage Error: Failed to create CVMetalTextureRef. %s", __FUNCTION__);
+    }
     
     CFRelease(attrs);
     CFRelease(empty);

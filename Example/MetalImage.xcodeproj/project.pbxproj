@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048033DB36250CC321FF4B41 /* libPods-MetalImage_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB854053FC0962FE2666A098 /* libPods-MetalImage_Example.a */; };
 		1FE3DC7C20E87D4B00D0B911 /* MISimpleImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6920E87D4A00D0B911 /* MISimpleImageFilterViewController.m */; };
 		1FE3DC7D20E87D4B00D0B911 /* MIShowCaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6E20E87D4B00D0B911 /* MIShowCaseFilterViewController.m */; };
 		1FE3DC7E20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE3DC6F20E87D4B00D0B911 /* MIShowCaseFilterListViewController.m */; };
@@ -31,6 +30,7 @@
 		8482F42A20F449EA00DC16FE /* b1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8482F42820F449EA00DC16FE /* b1.jpg */; };
 		8482F42B20F449EA00DC16FE /* a1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8482F42920F449EA00DC16FE /* a1.jpg */; };
 		84FD1A3320F45FAC00B4C512 /* MISimpleBlendFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD1A3220F45FAC00B4C512 /* MISimpleBlendFilterViewController.m */; };
+		DC488AD0C434EB1F80466326 /* Pods_MetalImage_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C745E0E3E6DD366EB96C826C /* Pods_MetalImage_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +76,8 @@
 		A16C09A956CD74432676C696 /* Pods-MetalImage_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalImage_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalImage_Example/Pods-MetalImage_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AE6FFE4AB3FEE1D6CC8C8147 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BE24F89B87D424DD7C92F8DA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C745E0E3E6DD366EB96C826C /* Pods_MetalImage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalImage_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA060CCF7453EC2B0E974D0C /* Pods-MetalImage_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalImage_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalImage_Tests/Pods-MetalImage_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		CB854053FC0962FE2666A098 /* libPods-MetalImage_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MetalImage_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				048033DB36250CC321FF4B41 /* libPods-MetalImage_Example.a in Frameworks */,
+				DC488AD0C434EB1F80466326 /* Pods_MetalImage_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +189,7 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				CB854053FC0962FE2666A098 /* libPods-MetalImage_Example.a */,
+				C745E0E3E6DD366EB96C826C /* Pods_MetalImage_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				FE7B5F325305CA505CCE6948 /* [CP] Copy Pods Resources */,
+				8236CE84770E827DCFA365B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,22 +351,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE7B5F325305CA505CCE6948 /* [CP] Copy Pods Resources */ = {
+		8236CE84770E827DCFA365B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MetalImage_Example/Pods-MetalImage_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MetalImage/MetalImage.bundle",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MetalImage_Example/Pods-MetalImage_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MetalImage/MetalImage.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MetalImage.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetalImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalImage_Example/Pods-MetalImage_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalImage_Example/Pods-MetalImage_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

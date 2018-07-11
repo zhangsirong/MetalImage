@@ -96,12 +96,11 @@
     NSInteger displayViewWidth = _displayView.contentSize.width;
     
     _camera = [[MIVideoCamera alloc] initWithCameraPosition:AVCaptureDevicePositionFront sessionPreset:AVCaptureSessionPresetPhoto];
-    _camera.outputFrame = CGRectMake(0, 0, displayViewWidth, ceil(displayViewWidth * 4.0 /3.0));
-        
+    
     _defaultFilter = [[MIFilter alloc] init];
     _processFilter = [[MIGrayscaleFilter alloc] init];
     _cropFilter = [[MICropFilter alloc] initWithCropRegion:CGRectMake(0, 0.125, 1, 0.75)];
-    
+
 //    设置在_displayView里面渲染的区域
     _viewFilter = [[MIFilter alloc] init];//做在view中的位置调整
     _viewFilter.outputFrame = CGRectMake(0, 150, displayViewWidth, displayViewWidth);

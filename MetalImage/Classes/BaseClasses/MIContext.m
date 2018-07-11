@@ -38,6 +38,10 @@ static MIContext *_sharedContext = nil;
         _defaultLibrary = [_device newDefaultLibrary];
         
         NSURL *metalImageURL = [[NSBundle mainBundle] URLForResource:@"MetalImage" withExtension:@"bundle"];
+        if (!metalImageURL) {
+            NSBundle *bundle = [NSBundle bundleForClass:[MIContext class]];
+            metalImageURL = [bundle URLForResource:@"MetalImage" withExtension:@"bundle"];
+        }
         
         NSString *libraryFile;
         if (metalImageURL) {

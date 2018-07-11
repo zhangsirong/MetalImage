@@ -1,1 +1,0 @@
-../../../../../MetalImage/Classes/BaseClasses/MITexture.h
