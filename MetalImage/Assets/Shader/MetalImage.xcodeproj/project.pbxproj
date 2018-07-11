@@ -345,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = ../;
 				DEVELOPMENT_TEAM = G583SJY324;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = ../;
 				DEVELOPMENT_TEAM = G583SJY324;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
