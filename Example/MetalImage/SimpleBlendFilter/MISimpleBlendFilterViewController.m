@@ -8,6 +8,7 @@
 
 #import "MISimpleBlendFilterViewController.h"
 #import <MetalImage/MetalImage.h>
+#import <Photos/Photos.h>
 
 @interface MISimpleBlendFilterViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -21,7 +22,9 @@
     
     UITableView *_tableView;
     NSArray *_blendModeArray;
+    UIButton *_saveButton;
 }
+
 @end
 
 @implementation MISimpleBlendFilterViewController
@@ -55,8 +58,8 @@
     [_frontImage processingImage];
     [_backImage processingImage];
     [self configSubViews];
+    
 }
-
 
 - (void)configSubViews {
     CGFloat width = self.view.bounds.size.width;
@@ -78,6 +81,12 @@
     _slider.minimumValue = 0.0;
     _slider.value = 1.0;
     [self.view addSubview:_slider];
+    
+    _saveButton = [[UIButton alloc] initWithFrame:CGRectMake(width - 100, 100, 100, 100)];
+    [_saveButton setTitle:@"保存" forState:UIControlStateNormal];
+    [_saveButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_saveButton addTarget:self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_saveButton];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -114,8 +123,34 @@
     [_frontImage processingImage];
     [_backImage processingImage];
     
-//    UIImage *processImage = [_blendFilter imageFromCurrentFrame];
-//    NSLog(@"processingImage = %@", processImage);
+
+}
+
+- (void)save:(UIButton *)button {
+    UIImage *processImage = [_blendFilter imageFromCurrentFrame];
+    [self saveImageToAlbum:processImage];
+}
+
+- (void)saveImageToAlbum:(UIImage *)image {
+    //保存到相册
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *assetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        assetRequest.creationDate = [NSDate date];
+    } completionHandler:^(BOOL success, NSError *error) {
+        if (success ) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:NULL message:@"保存成功" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+                [alertVC addAction:action];
+                [self presentViewController:alertVC animated:YES completion:nil];
+            });
+            
+        } else {
+            NSLog( @"Could not save Video to photo library: %@", error );
+        }
+    }];
 }
 
 @end
