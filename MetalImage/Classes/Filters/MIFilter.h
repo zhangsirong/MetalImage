@@ -15,7 +15,8 @@
     MITexture *_inputTexture;
     id<MTLRenderPipelineState> _renderPipelineState;
     MTLRenderPassDescriptor *_renderPassDescriptor;
-    
+    CGSize _contentSize;
+
     id<MTLBuffer> _positionBuffer;
     CGRect _preRenderRect;
 }

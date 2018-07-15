@@ -150,7 +150,9 @@
 - (void)setSessionPreset:(NSString *)sessionPreset {
     [_cameraSession beginConfiguration];
     _sessionPreset = [sessionPreset copy];
-    [_cameraSession setSessionPreset:_sessionPreset];
+    if ([_cameraSession canSetSessionPreset:_sessionPreset]) {
+        [_cameraSession setSessionPreset:_sessionPreset];
+    }
     [_cameraSession commitConfiguration];
     _frameRate = 0;
 }
@@ -343,6 +345,7 @@
     
     [MIContext performAsynchronouslyOnImageProcessingQueue:^{
         id<MTLCommandBuffer> commandBuffer = [[MIContext sharedContext].commandQueue commandBuffer];
+        [commandBuffer enqueue];
         [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> commandBuffer) {
             dispatch_semaphore_signal(_imageProcessingSemaphore);
             CFRelease(sampleBuffer);

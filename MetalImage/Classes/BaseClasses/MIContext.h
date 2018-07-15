@@ -28,9 +28,16 @@
 + (void)performAsynchronouslyOnImageProcessingQueue:(void (^)(void))block;
 
 + (id<MTLBuffer>)createBufferWithLength:(NSUInteger)length;
-+ (id<MTLRenderPipelineState>)createRenderPipelineStateWithVertexFunction:(NSString *)vertexFunction fragmentFunction:(NSString *)fragmentFunction;
-
+    
++ (id<MTLRenderPipelineState>)createRenderPipelineStateWithVertexFunction:(NSString *)vertexFunction
+                                                         fragmentFunction:(NSString *)fragmentFunction;
+    
++ (id<MTLRenderPipelineState>)createRenderPipelineStateWithVertexFunction:(NSString *)vertexFunction
+                                                         fragmentFunction:(NSString *)fragmentFunction
+                                                                inLibrary:(id<MTLLibrary>)library;
+    
 + (id<MTLComputePipelineState>)createComputePipelineStateWithFunction:(NSString *)function;
++ (id<MTLComputePipelineState>)createComputePipelineStateWithFunction:(NSString *)function inLibrary:(id<MTLLibrary>)library;
 
 + (void)updateBufferContent:(id<MTLBuffer>)buffer contentSize:(CGSize)contentSize outputFrame:(CGRect)outputFrame;
 

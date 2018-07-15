@@ -109,8 +109,6 @@ static MIContext *_sharedContext = nil;
 #endif
 
 
-
-
 #pragma mark - 创建管线及资源方法
 
 + (id<MTLRenderPipelineState>)createRenderPipelineStateWithVertexFunction:(NSString *)vertexFunction fragmentFunction:(NSString *)fragmentFunction {
@@ -136,33 +134,54 @@ static MIContext *_sharedContext = nil;
         NSLog(@"MetalImage Error : fragmentFunction : %@ not fount",fragmentFunction);
     }
     
-    MTLRenderPipelineDescriptor *pipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
-    pipelineDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
-    pipelineDescriptor.vertexFunction = vertexFunc;
-    pipelineDescriptor.fragmentFunction = fragmentFunc;
-    
-    NSError *error = nil;
-    id<MTLRenderPipelineState> pipeline = [[MIContext sharedContext].device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:&error];
-    
-    if (!pipeline) {
-        NSLog(@"MetalImage Error : occurred when creating render pipeline state: %@", error);
-    }
-    
+    id<MTLRenderPipelineState> pipeline = [self createPipleStateWithVertexFunc:vertexFunc fragmentFunc:fragmentFunc];
     return pipeline;
 }
+    
++ (id<MTLRenderPipelineState>)createRenderPipelineStateWithVertexFunction:(NSString *)vertexFunction
+                                                         fragmentFunction:(NSString *)fragmentFunction
+                                                                inLibrary:(id<MTLLibrary>)library {
+    id<MTLFunction> vertexFunc = nil;
+    id<MTLFunction> fragmentFunc = nil;
+    
+    vertexFunc = [library newFunctionWithName:vertexFunction];
+    fragmentFunc = [library newFunctionWithName:fragmentFunction];
 
+    if (!vertexFunc) {
+        NSLog(@"MetalImage Error : vertexFunction : %@ not fount",vertexFunction);
+        return nil;
+    }
+    
+    if (!fragmentFunc) {
+        NSLog(@"MetalImage Error : fragmentFunction : %@ not fount",fragmentFunction);
+        return nil;
+    }
+    
+    id<MTLRenderPipelineState> pipeline = [self createPipleStateWithVertexFunc:vertexFunc fragmentFunc:fragmentFunc];
+    return pipeline;
+}
+    
+    
 + (id<MTLComputePipelineState>)createComputePipelineStateWithFunction:(NSString *)function {
+    id<MTLComputePipelineState> computePipelineState = [self createComputePipelineStateWithFunction:function inLibrary:[MIContext sharedContext].defaultLibrary];
+    if (!computePipelineState) {
+        computePipelineState = [self createComputePipelineStateWithFunction:function inLibrary:[MIContext sharedContext].metalImageLibrary];
+    }
+    return computePipelineState;
+}
+
++ (id<MTLComputePipelineState>)createComputePipelineStateWithFunction:(NSString *)function inLibrary:(id<MTLLibrary>)library {
     id<MTLFunction> func = [[MIContext sharedContext].defaultLibrary newFunctionWithName:function];
     
     if (!func) {
-        func = [[MIContext sharedContext].metalImageLibrary newFunctionWithName:function];
+        func = [library newFunctionWithName:function];
     }
     
     if (!func) {
         NSLog(@"MetalImage Error : kernelFunction : %@ not fount", function);
         return nil;
     }
-
+    
     NSError *error = nil;
     id<MTLComputePipelineState> computePipelineState = [[MIContext sharedContext].device newComputePipelineStateWithFunction:func error:&error];
     if (!computePipelineState) {
@@ -170,7 +189,7 @@ static MIContext *_sharedContext = nil;
     }
     return computePipelineState;
 }
-
+    
 + (id<MTLBuffer>)createBufferWithLength:(NSUInteger)length {
     id<MTLBuffer> mtlBuffer = [[MIContext sharedContext].device newBufferWithLength:length options:MTLResourceCPUCacheModeDefaultCache];
     
@@ -202,6 +221,24 @@ static MIContext *_sharedContext = nil;
     bufferContent[3] = vector4(right, top, 0.0f, 1.0f);
 }
 
+    
+#pragma mark - private
+    
++ (id<MTLRenderPipelineState>)createPipleStateWithVertexFunc:(id<MTLFunction>)vertexFunc fragmentFunc:(id<MTLFunction>)fragmentFunc {
+    MTLRenderPipelineDescriptor *pipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
+    pipelineDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
+    pipelineDescriptor.vertexFunction = vertexFunc;
+    pipelineDescriptor.fragmentFunction = fragmentFunc;
+    
+    NSError *error = nil;
+    id<MTLRenderPipelineState> pipeline = [[MIContext sharedContext].device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:&error];
+    
+    if (!pipeline) {
+        NSLog(@"MetalImage Error : occurred when creating render pipeline state: %@", error);
+    }
+    return pipeline;
+}
+    
 
 
 @end

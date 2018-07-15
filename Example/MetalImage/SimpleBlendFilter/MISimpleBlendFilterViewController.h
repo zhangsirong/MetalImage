@@ -1,9 +1,9 @@
 //
 //  MISimpleBlendFilterViewController.h
-//  MetalImage_Example
+//  MetalImage
 //
 //  Created by zsr on 2018/07/10.
-//  Copyright © 2018年 zhangsr. All rights reserved.
+//  Copyright © 2018年 beauty Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -279,39 +279,39 @@
     
     switch (_orientation) {
         case MITextureOrientationUp:
-        textureCoordinate = orientationUpTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationUpTextureCoordinate;
+            break;
+            
         case MITextureOrientationDown:
-        textureCoordinate = orientationDownTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationDownTextureCoordinate;
+            break;
+            
         case MITextureOrientationLeft:
-        textureCoordinate = orientationLeftTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationLeftTextureCoordinate;
+            break;
+            
         case MITextureOrientationRight:
-        textureCoordinate = orientationRightTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationRightTextureCoordinate;
+            break;
+            
         case MITextureOrientationUpMirrored:
-        textureCoordinate = orientationUpMirroredTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationUpMirroredTextureCoordinate;
+            break;
+            
         case MITextureOrientationDownMirrored:
-        textureCoordinate = orientationDownMirroredTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationDownMirroredTextureCoordinate;
+            break;
+            
         case MITextureOrientationLeftMirrored:
-        textureCoordinate = orientationLeftMirroredTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationLeftMirroredTextureCoordinate;
+            break;
+            
         case MITextureOrientationRightMirrored:
-        textureCoordinate = orientationRightMirroredTextureCoordinate;
-        break;
-        
+            textureCoordinate = orientationRightMirroredTextureCoordinate;
+            break;
+            
         default:
-        textureCoordinate = orientationUpTextureCoordinate;
+            textureCoordinate = orientationUpTextureCoordinate;
     }
     
     vector_float2 *textureCoordinateContent = _textureCoordinateBuffer.contents;
@@ -478,8 +478,5 @@ void MITextureReleaseDataCallback(void *info, const void *data, size_t size) {
     }
 }
 
-void MITextureDataReleaseCallback(void *releaseRefCon, const void *baseAddress) {
-    free((void *)baseAddress);
-}
 
 @end

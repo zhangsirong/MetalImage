@@ -20,7 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Filter List";
-    [self.view addSubview:self.tableView];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.tableFooterView = [[UIView alloc] init];
+    [self.view addSubview:_tableView];
 }
 
 
@@ -78,18 +82,6 @@
     NSInteger row = indexPath.row;
     MIShowCaseFilterViewController *vc = [[MIShowCaseFilterViewController alloc] initWithFilterType:row];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-#pragma mark - 
-
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.tableFooterView = [[UIView alloc] init];
-    }
-    return _tableView;
 }
 
 @end

@@ -16,27 +16,28 @@
 @end
 
 @implementation MIViewController
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"demo";
-    [self.view addSubview:self.tableView];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.tableFooterView = [[UIView alloc] init];
+    [self.view addSubview:_tableView];
     
+    _titles = @[@"Filter List",
+                @"Simple Video",
+                @"Simple CaptureImage",
+                @"Simple Image",
+                @"Simple Gif",
+                @"Simple VideoFile",
+                @"Simple Blend"];
 }
 
-- (NSArray *)titles {
-    if (!_titles) {
-        _titles = @[
-                    @"Filter List",
-                    @"Simple Video",
-                    @"Simple CaptureImage",
-                    @"Simple Image",
-                    @"Simple Gif",
-                    @"Simple VideoFile",
-                    @"Simple Blend"
-                    ];
-    }
-    return _titles;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.alpha = 1.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,20 +94,7 @@
     }
     
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
-
-
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.tableFooterView = [[UIView alloc] init];
-    }
-    return _tableView;
-}
-
 
 
 @end
